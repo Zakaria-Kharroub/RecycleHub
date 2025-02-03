@@ -1,0 +1,98 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #007bff;
+}
+
+.button .btn {
+  padding: 10px 24px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button .btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+  }
+
+  .button {
+    text-align: center;
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    border: none;
+  }
+
+  .toggler-icon {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+  }
+}
