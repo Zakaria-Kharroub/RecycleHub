@@ -1,7 +1,6 @@
 .register-section {
   background-color: #e8f5e9;
-  min-height: calc(100vh - 70px);
-  margin-top: 70px;
+  min-height: calc(100vh - 60px);
 }
 
 .register-form-container {

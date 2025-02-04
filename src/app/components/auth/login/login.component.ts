@@ -7,7 +7,6 @@ import {RouterLink} from '@angular/router';
   selector: 'app-login',
   imports: [
     HeaderComponent,
-    FooterComponent,
     RouterLink
   ],
   templateUrl: './login.component.html',
