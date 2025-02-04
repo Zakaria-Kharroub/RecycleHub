@@ -1,9 +1,7 @@
-
-/* Keep existing hero section styles */
 .hero-section {
   margin-top: 80px;
   padding: 100px 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
 }
 
 .hero-content {
@@ -14,12 +12,12 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #333;
+  color: #2e7d32;
 }
 
 .hero-content .lead {
   font-size: 20px;
-  color: #666;
+  color: #333;
   margin-bottom: 30px;
 }
 
@@ -29,17 +27,17 @@
 }
 
 .hero-buttons .btn-primary {
-  background: #007bff;
-  border-color: #007bff;
+  background: #4CAF50;
+  border-color: #4CAF50;
 }
 
 .hero-buttons .btn-outline-primary {
-  color: #007bff;
-  border-color: #007bff;
+  color: #4CAF50;
+  border-color: #4CAF50;
 }
 
 .hero-buttons .btn-outline-primary:hover {
-  background: #007bff;
+  background: #4CAF50;
   color: #fff;
 }
 
@@ -53,7 +51,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* New Features Section Styles */
 .features-section {
   padding: 80px 0;
   background: #fff;
@@ -66,13 +63,13 @@
 .section-header h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #333;
+  color: #2e7d32;
   margin-bottom: 20px;
 }
 
 .section-header p {
   font-size: 18px;
-  color: #666;
+  color: #333;
 }
 
 .feature-card {
@@ -91,7 +88,7 @@
 .feature-card .icon {
   width: 70px;
   height: 70px;
-  background: #007bff;
+  background: #4CAF50;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -107,18 +104,18 @@
 .feature-card h3 {
   font-size: 22px;
   font-weight: 600;
-  color: #333;
+  color: #2e7d32;
   margin-bottom: 15px;
 }
 
 .feature-card p {
   font-size: 16px;
-  color: #666;
+  color: #333;
   margin-bottom: 20px;
 }
 
 .feature-card .learn-more {
-  color: #007bff;
+  color: #4CAF50;
   font-weight: 500;
   text-decoration: none;
   display: inline-flex;
@@ -128,7 +125,7 @@
 }
 
 .feature-card .learn-more:hover {
-  color: #0056b3;
+  color: #2e7d32;
 }
 
 .feature-card .learn-more i {
@@ -140,7 +137,6 @@
   transform: translateX(5px);
 }
 
-/* Responsive Styles */
 @media (max-width: 991px) {
   .hero-section {
     padding: 60px 0;
@@ -176,125 +172,5 @@
 
   .feature-card .icon {
     margin: 0 auto 20px;
-  }
-}
-
-/* Add these styles to your existing CSS */
-
-.services-section {
-  padding: 80px 0;
-  background-color: #f8f9fa;
-}
-
-.section-header {
-  margin-bottom: 60px;
-}
-
-.section-header .subtitle {
-  color: #007bff;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.section-header p {
-  color: #6c757d;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-.icon-wrapper {
-  width: 70px;
-  height: 70px;
-  background: #007bff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.icon-wrapper i {
-  font-size: 28px;
-  color: white;
-}
-
-.service-card h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.service-card p {
-  color: #6c757d;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.learn-more {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-}
-
-.learn-more:hover {
-  color: #0056b3;
-}
-
-.learn-more i {
-  font-size: 14px;
-  transition: transform 0.3s ease;
-}
-
-.learn-more:hover i {
-  transform: translateX(5px);
-}
-
-@media (max-width: 991px) {
-  .services-section {
-    padding: 60px 0;
-  }
-
-  .section-header h2 {
-    font-size: 2rem;
-  }
-
-  .service-card {
-    padding: 25px;
-  }
-}
-
-@media (max-width: 767px) {
-  .section-header {
-    margin-bottom: 40px;
   }
 }

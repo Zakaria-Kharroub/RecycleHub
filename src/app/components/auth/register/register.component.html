@@ -1,1 +1,57 @@
-<p>register works!</p>
+<app-header></app-header>
+<section class="register-section py-5">
+  <div class="container">
+    <div class="row align-items-stretch">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="register-form-container bg-white p-4 rounded shadow h-100">
+          <h2 class="text-center mb-4">Inscription à RecycleHub</h2>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="votre@email.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input type="password" class="form-control" id="password" placeholder="Créez un mot de passe sécurisé" required>
+            </div>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Votre prénom" required>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Votre nom" required>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Adresse complète</label>
+              <textarea class="form-control" id="address" rows="3" placeholder="Votre adresse complète" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Numéro de téléphone</label>
+              <input type="tel" class="form-control" id="phone" placeholder="Votre numéro de téléphone" required>
+            </div>
+            <div class="mb-3">
+              <label for="birthdate" class="form-label">Date de naissance</label>
+              <input type="date" class="form-control" id="birthdate" required>
+            </div>
+<!--            <div class="mb-3">-->
+<!--              <label for="profilePicture" class="form-label">Photo de profil (optionnel)</label>-->
+<!--              <input type="file" class="form-control" id="profilePicture" accept="image/*">-->
+<!--            </div>-->
+            <button type="submit" class="btn btn-primary w-100">Créer mon compte</button>
+          </form>
+          <p class="mt-3 text-center">Déjà membre? <a routerLink='/login'>Connectez-vous</a></p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="register-image-container h-100 rounded shadow overflow-hidden">
+          <img src="https://www.lesnatchfrancais.com/cdn/shop/articles/recyclage.jpg?v=1730802229" alt="Illustration de recyclage" class="img-fluid h-100 w-100 object-fit-cover">
+          <div class="overlay-text p-4 bg-dark bg-opacity-75 text-white">
+            <h3>Rejoignez la communauté RecycleHub</h3>
+            <p>Inscrivez-vous pour commencer à recycler et à gagner des récompenses</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

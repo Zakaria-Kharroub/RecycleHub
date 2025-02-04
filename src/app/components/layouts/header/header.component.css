@@ -15,10 +15,14 @@
 }
 
 .navbar-brand {
-  color: #333;
-  font-size: 1.5rem;
+  color: #4CAF50;
+  font-size: 1.8rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.logo-text {
+  font-weight: bold;
 }
 
 .navbar-nav {
@@ -40,12 +44,12 @@
 
 .nav-link.active,
 .nav-link:hover {
-  color: #007bff;
+  color: #4CAF50;
 }
 
 .button .btn {
   padding: 10px 24px;
-  background: #007bff;
+  background: #4CAF50;
   color: #fff;
   border-radius: 4px;
   font-weight: 500;
@@ -54,11 +58,9 @@
 }
 
 .button .btn:hover {
-  background: #0056b3;
+  background: #45a049;
   transform: translateY(-1px);
 }
-
-
 
 @media (max-width: 991px) {
   .navbar-collapse {

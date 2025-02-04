@@ -4,7 +4,7 @@
       <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" routerLink="/">
-            <span style="font-weight: bold; font-size: 2rem"  >RecycleHub</span>
+            <span class="logo-text">RecycleHub</span>
           </a>
           <button class="navbar-toggler" type="button" (click)="toggleMenu()">
             <span class="toggler-icon"></span>
@@ -14,20 +14,20 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                <a class="nav-link" routerLink="/collecte" routerLinkActive="active">Demande de Collecte</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/services" routerLinkActive="active">Services</a>
+                <a class="nav-link" routerLink="/points" routerLinkActive="active">Mes Points</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+                <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profil</a>
               </li>
             </ul>
             <div class="button">
-              <a class="btn" href="#">Get Started</a>
+              <a class="btn" routerLink="/login">Connexion</a>
             </div>
           </div>
         </nav>
