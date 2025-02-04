@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "json-server": "json-server --watch db.json --port 3000 --host 0.0.0.0"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,8 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "glightbox": "^3.3.1",
+    "json-server": "^1.0.0-beta.3",
+    "jsonserver": "^0.1.6",
     "rxjs": "~7.8.0",
     "tiny-slider": "^2.9.4",
     "tslib": "^2.3.0",
