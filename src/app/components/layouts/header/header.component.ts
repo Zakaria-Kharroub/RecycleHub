@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {AuthService} from '../../../services/auth.service';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    CommonModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  constructor(public authService: AuthService) {}
 
   toggleMenu() {
     const navbarCollapse = document.querySelector('.navbar-collapse') as HTMLElement;
@@ -19,4 +24,7 @@ export class HeaderComponent {
     }
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

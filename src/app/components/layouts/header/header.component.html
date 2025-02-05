@@ -22,12 +22,15 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="/points" routerLinkActive="active">Mes Points</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profil</a>
-              </li>
             </ul>
             <div class="button">
-              <a class="btn" routerLink="/login">Connexion</a>
+              <ng-container *ngIf="!authService.isAuthenticated(); else userInfo">
+                <a class="btn" routerLink="/login">Connexion</a>
+              </ng-container>
+              <ng-template #userInfo>
+                <span lass="nav-link" routerLink="/profile" routerLinkActive="active">{{ authService.userFirstName }}</span>
+                <button class="btn btn-outline-primary" (click)="logout()">Déconnexion</button>
+              </ng-template>
             </div>
           </div>
         </nav>

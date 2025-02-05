@@ -1,21 +1,89 @@
 {
-  "users":[
+  "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@gmail.com"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Doe",
       "email": "jane@gmai.com"
-    }
-],
-
-  "token": [
+    },
     {
-      "exist": true,
-      "id": "3ede"
+      "id": "7a6a",
+      "name": "ahmed",
+      "age": 20
+    },
+    {
+      "id": "51f2",
+      "email": "tefat@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "Randall",
+      "lastName": "Larsen",
+      "address": "Ad qui soluta placea",
+      "phone": "0603471732",
+      "birthdate": "1976-10-13"
+    },
+    {
+      "id": "f07a",
+      "email": "gefere@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "Martin",
+      "lastName": "Macias",
+      "address": "Omnis quaerat earum ",
+      "phone": "2312398232",
+      "birthdate": "2007-07-15"
+    },
+    {
+      "id": "4fa4",
+      "email": "teked@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "Flavia",
+      "lastName": "Oliver",
+      "address": "Exercitationem tempo",
+      "phone": "2893723232",
+      "birthdate": "1998-01-13"
+    },
+    {
+      "id": "ec1b",
+      "email": "kolihab@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "abdelali",
+      "lastName": "Mckinney",
+      "address": "Qui elit voluptas n",
+      "phone": "2837239823",
+      "birthdate": "2020-10-28"
+    },
+    {
+      "id": "dacd",
+      "email": "xaxanypaw@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "Lila",
+      "lastName": "Hardy",
+      "address": "Qui velit quo enim l",
+      "phone": "3232182912",
+      "birthdate": "2004-05-11"
+    },
+    {
+      "id": "a05d",
+      "email": "fatozep@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "firstName": "Astra",
+      "lastName": "Pitts",
+      "address": "Ut quas consectetur ",
+      "phone": "1230912932",
+      "birthdate": "2021-05-10"
+    },
+    {
+      "id": "280e",
+      "email": "dujidohu@mailinator.com",
+      "password": "dujidohu@mailinator.com",
+      "firstName": "Kaseem",
+      "lastName": "Hensley",
+      "address": "Aperiam ut sit fuga",
+      "phone": "2372393989",
+      "birthdate": "1987-07-27"
     }
   ]
 }
