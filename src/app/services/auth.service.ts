@@ -1,31 +1,40 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable, tap } from "rxjs";
+import { BehaviorSubject, Observable, of, throwError } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { map, catchError } from "rxjs/operators";
+
+interface User {
+  id: string;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
   private apiUrl = "http://localhost:3000";
-  private currentUserSubject: BehaviorSubject<any>;
-  public currentUser: Observable<any>;
+  private currentUserSubject: BehaviorSubject<Partial<User> | null>;
+  public currentUser: Observable<Partial<User> | null>;
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) {
-    this.currentUserSubject = new BehaviorSubject<any>(
+    this.currentUserSubject = new BehaviorSubject<Partial<User> | null>(
       JSON.parse(localStorage.getItem("currentUser") || "null")
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  public get currentUserValue() {
+  public get currentUserValue(): Partial<User> | null {
     return this.currentUserSubject.value;
   }
 
-  public get userFirstName(): string {
+  public get userFirstName():string{
     return this.currentUserValue?.firstName || '';
   }
 
@@ -33,39 +42,40 @@ export class AuthService {
     return !!this.currentUserValue;
   }
 
-  login(credentials: { email: string; password: string }): Observable<any> {
-    return this.http.get(`${this.apiUrl}/users?email=${credentials.email}`).pipe(
-      tap((users: any) => {
-        const user = users[0];
-        console.log('User found:', user); // Log the user found
-        if (user && user.password === credentials.password) {
-          const userToStore = {
-            id: user.id,
-            email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName,
-          };
-          localStorage.setItem("currentUser", JSON.stringify(userToStore));
-          this.currentUserSubject.next(userToStore);
-        } else {
-          console.error('Incorrect email or password');
+  login(credentials: { email: string; password: string }): Observable<Partial<User>> {
+    return this.http.get<User[]>(`${this.apiUrl}/users`).pipe(
+      map((users: User[]) => {
+        const user = users.find(u =>
+          u.email === credentials.email &&
+          u.password === credentials.password
+        );
+
+        if (!user) {
           throw new Error('Email ou mot de passe incorrect');
         }
+
+        const userToStore: Partial<User> = {
+          id: user.id,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName
+        };
+
+        localStorage.setItem("currentUser", JSON.stringify(userToStore));
+        this.currentUserSubject.next(userToStore);
+        return userToStore;
+      }),
+      catchError((error) => {
+        console.error('Login error:', error);
+        return throwError(() => new Error('Email ou mot de passe incorrect'));
       })
     );
   }
 
-  register(user: any): Observable<any> {
-    const userData = { ...user };
-    if (userData.profilePicture === null) {
-      delete userData.profilePicture;
-    }
-
-
-
-    return this.http.post(`${this.apiUrl}/users`, userData).pipe(
-      tap((response: any) => {
-        const userToStore = {
+  register(user: Omit<User, 'id'>): Observable<Partial<User>> {
+    return this.http.post<User>(`${this.apiUrl}/users`, user).pipe(
+      map((response: User) => {
+        const userToStore: Partial<User> = {
           id: response.id,
           email: response.email,
           firstName: response.firstName,
@@ -73,6 +83,11 @@ export class AuthService {
         };
         localStorage.setItem("currentUser", JSON.stringify(userToStore));
         this.currentUserSubject.next(userToStore);
+        return userToStore;
+      }),
+      catchError((error) => {
+        console.error('Registration error:', error);
+        return throwError(() => new Error('Une erreur est survenue lors de l\'inscription'));
       })
     );
   }

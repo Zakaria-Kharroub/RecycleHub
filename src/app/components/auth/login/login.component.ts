@@ -38,13 +38,17 @@ export class LoginComponent {
       this.isSubmitting = true;
       this.errorMessage = '';
 
-      console.log('Form values:', this.loginForm.value); // Log form values
+      const credentials = {
+        email: this.loginForm.get('email')?.value,
+        password: this.loginForm.get('password')?.value
+      };
 
-      this.authService.login(this.loginForm.value).subscribe({
+      this.authService.login(credentials).subscribe({
         next: () => {
           this.router.navigate(['/']);
         },
         error: (error) => {
+          console.error('Login error:', error);
           this.errorMessage = error.message || 'Une erreur est survenue lors de la connexion';
           this.isSubmitting = false;
         },

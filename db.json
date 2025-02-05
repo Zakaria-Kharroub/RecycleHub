@@ -84,6 +84,56 @@
       "address": "Aperiam ut sit fuga",
       "phone": "2372393989",
       "birthdate": "1987-07-27"
+    },
+    {
+      "id": "00ed",
+      "email": "zatyginu@mailinator.com",
+      "password": "$2a$10$58LiEagDvAAXtVrmpQhTreAQZlNsVB/R3yN3l1oXwwwokzEIlLf1a",
+      "firstName": "Yasir",
+      "lastName": "Wise",
+      "address": "At sunt dolores vero",
+      "phone": "3872387232",
+      "birthdate": "2007-05-16"
+    },
+    {
+      "id": "c8fa",
+      "email": "kuholizij@mailinator.com",
+      "password": "$2a$10$pjYPzV.2dPSa6NtCmq5UoeL0AHCpr/RFYHPlAuupAwJZh031M./xW",
+      "firstName": "Geraldine",
+      "lastName": "Houston",
+      "address": "Non officiis iusto o",
+      "phone": "6450822162",
+      "birthdate": "1999-11-21"
+    },
+    {
+      "id": "86cb",
+      "email": "wygysenin@mailinator.com",
+      "password": "$2a$10$bFaCJNhw5cNljDvwtCdege4SXXKqb23SBkUvVU95pQ7ZdcmvYIovC",
+      "firstName": "Ishmael",
+      "lastName": "Bradley",
+      "address": "Consequatur Dolore ",
+      "phone": "2493484949",
+      "birthdate": "2010-04-19"
+    },
+    {
+      "id": "ad0a",
+      "email": "vykaf@mailinator.com",
+      "password": "vykaf@mailinator.com",
+      "firstName": "Nayda",
+      "lastName": "Bender",
+      "address": "Quaerat a corrupti ",
+      "phone": "2387298738",
+      "birthdate": "2011-03-10"
+    },
+    {
+      "id": "12a2",
+      "email": "xikob@mailinator.com",
+      "password": "xikob@mailinator.com",
+      "firstName": "Mira",
+      "lastName": "Morin",
+      "address": "Sunt dolore beatae i",
+      "phone": "8273982734",
+      "birthdate": "1975-07-13"
     }
   ]
 }
