@@ -1,0 +1,159 @@
+<app-header></app-header>
+<section class="collecte-section">
+  <div class="container-fluid px-4">
+    <div class="collecte-container">
+      <!-- Formulaire de demande de collecte -->
+      <div class="collecte-form-wrapper">
+        <div class="collecte-form-card">
+          <h2>Nouvelle Demande</h2>
+          <form>
+            <div class="mb-4">
+              <label class="form-label">Type de déchet</label>
+              <div class="waste-type-grid">
+                <div class="waste-type-item">
+                  <input type="radio" name="wasteType" id="plastique">
+                  <label for="plastique">
+                    <i class="fas fa-wine-bottle"></i>
+                    <span>Plastique</span>
+                  </label>
+                </div>
+                <div class="waste-type-item">
+                  <input type="radio" name="wasteType" id="verre">
+                  <label for="verre">
+                    <i class="fas fa-glass-martini"></i>
+                    <span>Verre</span>
+                  </label>
+                </div>
+                <div class="waste-type-item">
+                  <input type="radio" name="wasteType" id="papier">
+                  <label for="papier">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Papier</span>
+                  </label>
+                </div>
+                <div class="waste-type-item">
+                  <input type="radio" name="wasteType" id="metal">
+                  <label for="metal">
+                    <i class="fas fa-cube"></i>
+                    <span>Métal</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Photos des déchets (optionnel)</label>
+              <div class="upload-zone">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Glissez vos photos ici ou cliquez pour sélectionner</p>
+                <input type="file" multiple accept="image/*" class="d-none">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="mb-4 flex-grow-1">
+                <label class="form-label">Poids estimé (en grammes)</label>
+                <input type="number" class="form-control" min="1000" placeholder="Minimum 1000g">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Adresse de collecte</label>
+              <textarea class="form-control" rows="2" placeholder="Votre adresse complète"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="mb-4 flex-grow-1">
+                <label class="form-label">Date souhaitée</label>
+                <input type="date" class="form-control">
+              </div>
+              <div class="mb-4 flex-grow-1">
+                <label class="form-label">Créneau horaire</label>
+                <select class="form-control">
+                  <option>09:00 - 10:00</option>
+                  <option>10:00 - 11:00</option>
+                  <option>11:00 - 12:00</option>
+                  <option>14:00 - 15:00</option>
+                  <option>15:00 - 16:00</option>
+                  <option>16:00 - 17:00</option>
+                  <option>17:00 - 18:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Notes supplémentaires (optionnel)</label>
+              <textarea class="form-control" rows="2" placeholder="Informations complémentaires pour le collecteur"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Soumettre la demande</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Liste des demandes -->
+      <div class="collecte-list-wrapper">
+        <div class="collecte-list-header">
+          <h3>Mes demandes de collecte</h3>
+          <div class="collecte-filters">
+            <button class="btn btn-filter active">Toutes</button>
+            <button class="btn btn-filter">En attente</button>
+            <button class="btn btn-filter">Validées</button>
+          </div>
+        </div>
+        <div class="collecte-list">
+          <!-- Demande en attente -->
+          <div class="collecte-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kSZD8xw0lrfx3HzOweQobCIG1fW3mx.png" alt="Déchets plastiques" class="collecte-card-image">
+            <div class="collecte-content">
+              <div class="collecte-status pending">En attente</div>
+              <div class="collecte-info">
+                <div class="waste-type">
+                  <i class="fas fa-wine-bottle"></i>
+                  <span>Plastique</span>
+                </div>
+                <div class="collecte-details">
+                  <p><i class="fas fa-weight"></i> 2500g</p>
+                  <p><i class="fas fa-calendar"></i> 25 Mars 2024</p>
+                  <p><i class="fas fa-clock"></i> 14:00 - 15:00</p>
+                </div>
+                <div class="collecte-address">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Rue du Recyclage, 75001 Paris</span>
+                </div>
+              </div>
+              <div class="collecte-actions">
+                <button class="btn btn-outline-primary btn-sm">Modifier</button>
+                <button class="btn btn-outline-danger btn-sm">Supprimer</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Demande validée -->
+          <div class="collecte-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kSZD8xw0lrfx3HzOweQobCIG1fW3mx.png" alt="Déchets papier" class="collecte-card-image">
+            <div class="collecte-content">
+              <div class="collecte-status validated">Validée</div>
+              <div class="collecte-info">
+                <div class="waste-type">
+                  <i class="fas fa-newspaper"></i>
+                  <span>Papier</span>
+                </div>
+                <div class="collecte-details">
+                  <p><i class="fas fa-weight"></i> 1800g</p>
+                  <p><i class="fas fa-calendar"></i> 20 Mars 2024</p>
+                  <p><i class="fas fa-clock"></i> 10:00 - 11:00</p>
+                </div>
+                <div class="collecte-address">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Rue du Recyclage, 75001 Paris</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
