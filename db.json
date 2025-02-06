@@ -134,6 +134,122 @@
       "address": "Sunt dolore beatae i",
       "phone": "8273982734",
       "birthdate": "1975-07-13"
+    },
+    {
+      "id": "3173",
+      "name": "ahmed",
+      "age": 20
+    },
+    {
+      "id": "de89",
+      "email": "walid@gmail.com",
+      "password": "walid@gmail.com",
+      "firstName": "walid",
+      "lastName": "ahmadi",
+      "address": "el massira\nyoussoufia",
+      "phone": "0603471732",
+      "birthdate": "2005-06-15"
+    }
+  ],
+  "demandes": [
+    {
+      "id": "23o8",
+      "type": "plastique",
+      "poid": 20
+    },
+    {
+      "id": "45b9",
+      "type": "papier",
+      "poid": 15
+    },
+    {
+      "id": "67c1",
+      "type": "verre",
+      "poid": 25
+    },
+    {
+      "0": {
+        "id": "23o8",
+        "type": "plastique",
+        "poid": 20
+      },
+      "1": {
+        "id": "45b9",
+        "type": "papier",
+        "poid": 15
+      },
+      "2": {
+        "id": "67c1",
+        "type": "verre",
+        "poid": 25
+      },
+      "id": "bfde"
+    },
+    {
+      "id": "a99f",
+      "typesDechets": [
+        "plastique",
+        "papier",
+        "metal"
+      ],
+      "poids": 1200,
+      "adresse": "Quo tempor cum ab es",
+      "date": "2023-07-24",
+      "creneau": "11:00 - 12:00",
+      "notes": "Voluptatem aut irur",
+      "photos": [],
+      "userId": "",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T11:11:51.383Z"
+    },
+    {
+      "id": "5390",
+      "typesDechets": [
+        "plastique"
+      ],
+      "poids": 1100,
+      "adresse": "In Nam rerum delectu",
+      "date": "2022-06-25",
+      "creneau": "09:00 - 10:00",
+      "notes": "Est nostrud alias do",
+      "photos": [],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T11:14:24.853Z"
+    },
+    {
+      "id": "cf8d",
+      "typesDechets": [
+        "verre",
+        "metal"
+      ],
+      "poids": 1100,
+      "adresse": "Tempora maxime ipsum",
+      "date": "2025-05-27",
+      "creneau": "16:00 - 17:00",
+      "notes": "Mollitia et voluptat",
+      "photos": [],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T11:16:42.997Z"
+    },
+    {
+      "id": "52c0",
+      "typesDechets": [
+        "plastique",
+        "verre",
+        "papier",
+        "metal"
+      ],
+      "poids": 1002,
+      "adresse": "In in totam culpa i",
+      "date": "2022-02-03",
+      "creneau": "15:00 - 16:00",
+      "notes": "Qui similique sint N",
+      "photos": [],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T11:58:54.614Z"
     }
   ]
 }

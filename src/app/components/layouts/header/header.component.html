@@ -28,7 +28,7 @@
                 <a class="btn" routerLink="/login">Connexion</a>
               </ng-container>
               <ng-template #userInfo>
-                <span lass="nav-link" routerLink="/profile" routerLinkActive="active">{{ authService.userFirstName }}</span>
+                <span class="nav-link" routerLink="/profile" routerLinkActive="active">{{ authService.userFirstName }}</span>
                 <button class="btn btn-outline-primary" (click)="logout()">Déconnexion</button>
               </ng-template>
             </div>
