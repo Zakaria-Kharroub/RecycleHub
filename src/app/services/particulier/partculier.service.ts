@@ -3,12 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AuthService} from '../auth.service';
 
+export interface TypeDechetPoids {
+  type: string;
+  poids: number;
+}
+
 export interface DemandeRequest {
   id?: string;
   userId: string;
-  typesDechets: string;
+  dechets: TypeDechetPoids[];
   photos?: string[];
-  poids: number;
+  poidsTotal: number;
   adresse: string;
   date: string;
   creneau: string;

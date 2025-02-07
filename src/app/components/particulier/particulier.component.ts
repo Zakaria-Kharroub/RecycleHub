@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../layouts/header/header.component';
-import { DemandeRequest, ParticulierService } from '../../services/particulier/partculier.service';
+import {DemandeRequest, ParticulierService} from '../../services/particulier/partculier.service';
+
+interface TypeDechet {
+  id: string;
+  nom: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-particulier',
@@ -22,14 +28,22 @@ export class ParticulierComponent implements OnInit {
   errorMessage = '';
   selectedFilter: 'all' | 'en_attente' | 'validee' = 'all';
   selectedFiles: File[] = [];
+  poidsTotal = 0;
+
+  typesDechets: TypeDechet[] = [
+    { id: 'plastique', nom: 'Plastique', icon: 'fa-wine-bottle' },
+    { id: 'verre', nom: 'Verre', icon: 'fa-glass-martini' },
+    { id: 'papier', nom: 'Papier', icon: 'fa-newspaper' },
+    { id: 'metal', nom: 'Métal', icon: 'fa-cube' }
+  ];
+
+  selectedTypes: { [key: string]: number } = {};
 
   constructor(
     private fb: FormBuilder,
     private particulierService: ParticulierService
   ) {
     this.demandeForm = this.fb.group({
-      typesDechets: ['', Validators.required],
-      poids: ['', [Validators.required, Validators.min(1000)]],
       adresse: ['', Validators.required],
       date: ['', Validators.required],
       creneau: ['', Validators.required],
@@ -54,6 +68,29 @@ export class ParticulierComponent implements OnInit {
     });
   }
 
+  toggleTypeDechet(typeId: string) {
+    if (this.selectedTypes[typeId] !== undefined) {
+      delete this.selectedTypes[typeId];
+    } else {
+      this.selectedTypes[typeId] = 0;
+    }
+    this.updatePoidsTotal();
+  }
+
+  isTypeDechetSelected(typeId: string): boolean {
+    return this.selectedTypes[typeId] !== undefined;
+  }
+
+  updatePoids(typeId: string, event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.selectedTypes[typeId] = parseInt(input.value) || 0;
+    this.updatePoidsTotal();
+  }
+
+  updatePoidsTotal() {
+    this.poidsTotal = Object.values(this.selectedTypes).reduce((total, poids) => total + poids, 0);
+  }
+
   onFileSelect(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files) {
@@ -62,19 +99,27 @@ export class ParticulierComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.demandeForm.valid && !this.isSubmitting) {
+    if (this.demandeForm.valid && !this.isSubmitting && Object.keys(this.selectedTypes).length > 0) {
       this.isSubmitting = true;
       this.errorMessage = '';
 
-      // TODO: Gérer l'upload des fichiers vers le serveur
+      const dechets = Object.entries(this.selectedTypes).map(([type, poids]) => ({
+        type,
+        poids
+      }));
+
       const demande = {
         ...this.demandeForm.value,
-        photos: [] // Ajouter les URLs des photos après l'upload
+        dechets,
+        poidsTotal: this.poidsTotal,
+        photos: []
       };
 
       this.particulierService.creerDemande(demande).subscribe({
         next: () => {
           this.demandeForm.reset();
+          this.selectedTypes = {};
+          this.poidsTotal = 0;
           this.selectedFiles = [];
           this.loadDemandes();
           this.isSubmitting = false;
@@ -83,19 +128,6 @@ export class ParticulierComponent implements OnInit {
           console.error('Erreur lors de la création de la demande:', error);
           this.errorMessage = 'Une erreur est survenue lors de la création de la demande';
           this.isSubmitting = false;
-        }
-      });
-    }
-  }
-
-  supprimerDemande(id: string) {
-    if (confirm('Êtes-vous sûr de vouloir supprimer cette demande ?')) {
-      this.particulierService.supprimerDemande(id).subscribe({
-        next: () => {
-          this.loadDemandes();
-        },
-        error: (error) => {
-          console.error('Erreur lors de la suppression:', error);
         }
       });
     }
@@ -111,4 +143,19 @@ export class ParticulierComponent implements OnInit {
     }
     return this.demandes.filter(demande => demande.status === this.selectedFilter);
   }
+
+  supprimerDemande(id: string) {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cette demande ?')) {
+      this.particulierService.supprimerDemande(id).subscribe({
+        next: () => {
+          this.loadDemandes();
+        },
+        error: (error) => {
+          console.error('Erreur lors de la suppression:', error);
+        }
+      });
+    }
+  }
+
+  protected readonly Object = Object;
 }
