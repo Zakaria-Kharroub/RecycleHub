@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../layouts/header/header.component';
-import {DemandeRequest, ParticulierService} from '../../services/particulier/partculier.service';
+import { DemandeRequest, ParticulierService } from '../../services/particulier/partculier.service';
 
 @Component({
   selector: 'app-particulier',
@@ -28,7 +28,7 @@ export class ParticulierComponent implements OnInit {
     private particulierService: ParticulierService
   ) {
     this.demandeForm = this.fb.group({
-      typesDechets: [[], [Validators.required, Validators.minLength(1)]],
+      typesDechets: ['', Validators.required],
       poids: ['', [Validators.required, Validators.min(1000)]],
       adresse: ['', Validators.required],
       date: ['', Validators.required],
@@ -59,19 +59,6 @@ export class ParticulierComponent implements OnInit {
     if (input.files) {
       this.selectedFiles = Array.from(input.files);
     }
-  }
-
-  toggleTypeDechet(type: string) {
-    const currentTypes = this.demandeForm.get('typesDechets')?.value as string[];
-    const index = currentTypes.indexOf(type);
-
-    if (index === -1) {
-      currentTypes.push(type);
-    } else {
-      currentTypes.splice(index, 1);
-    }
-
-    this.demandeForm.patchValue({ typesDechets: currentTypes });
   }
 
   onSubmit() {
@@ -123,9 +110,5 @@ export class ParticulierComponent implements OnInit {
       return this.demandes;
     }
     return this.demandes.filter(demande => demande.status === this.selectedFilter);
-  }
-
-  isTypeDechetSelected(type: string): boolean {
-    return (this.demandeForm.get('typesDechets')?.value as string[]).includes(type);
   }
 }

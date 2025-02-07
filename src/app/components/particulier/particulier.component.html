@@ -11,28 +11,28 @@
               <label class="form-label">Type de déchet</label>
               <div class="waste-type-grid">
                 <div class="waste-type-item">
-                  <input type="checkbox" [checked]="isTypeDechetSelected('plastique')" (change)="toggleTypeDechet('plastique')" id="plastique">
+                  <input type="radio" formControlName="typesDechets" value="plastique" id="plastique">
                   <label for="plastique">
                     <i class="fas fa-wine-bottle"></i>
                     <span>Plastique</span>
                   </label>
                 </div>
                 <div class="waste-type-item">
-                  <input type="checkbox" [checked]="isTypeDechetSelected('verre')" (change)="toggleTypeDechet('verre')" id="verre">
+                  <input type="radio" formControlName="typesDechets" value="verre" id="verre">
                   <label for="verre">
                     <i class="fas fa-glass-martini"></i>
                     <span>Verre</span>
                   </label>
                 </div>
                 <div class="waste-type-item">
-                  <input type="checkbox" [checked]="isTypeDechetSelected('papier')" (change)="toggleTypeDechet('papier')" id="papier">
+                  <input type="radio" formControlName="typesDechets" value="papier" id="papier">
                   <label for="papier">
                     <i class="fas fa-newspaper"></i>
                     <span>Papier</span>
                   </label>
                 </div>
                 <div class="waste-type-item">
-                  <input type="checkbox" [checked]="isTypeDechetSelected('metal')" (change)="toggleTypeDechet('metal')" id="metal">
+                  <input type="radio" formControlName="typesDechets" value="metal" id="metal">
                   <label for="metal">
                     <i class="fas fa-cube"></i>
                     <span>Métal</span>
@@ -40,7 +40,7 @@
                 </div>
               </div>
               <div *ngIf="demandeForm.get('typesDechets')?.touched && demandeForm.get('typesDechets')?.errors?.['required']" class="text-danger">
-                Sélectionnez au moins un type de déchet
+                Sélectionnez un type de déchet
               </div>
             </div>
 
@@ -129,7 +129,7 @@
         <div class="collecte-list">
           <div class="collecte-card" *ngFor="let demande of filteredDemandes">
             <img [src]="demande.photos?.[0] || 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kSZD8xw0lrfx3HzOweQobCIG1fW3mx.png'"
-                 [alt]="'Déchets ' + demande.typesDechets[0]"
+                 [alt]="'Déchets ' + demande.typesDechets"
                  class="collecte-card-image">
             <div class="collecte-content">
               <div class="collecte-status" [class.pending]="demande.status === 'en_attente'" [class.validated]="demande.status === 'validee'">
@@ -137,11 +137,11 @@
               </div>
               <div class="collecte-info">
                 <div class="waste-type">
-                  <i class="fas" [class.fa-wine-bottle]="demande.typesDechets.includes('plastique')"
-                     [class.fa-glass-martini]="demande.typesDechets.includes('verre')"
-                     [class.fa-newspaper]="demande.typesDechets.includes('papier')"
-                     [class.fa-cube]="demande.typesDechets.includes('metal')"></i>
-                  <span>{{ demande.typesDechets.join(', ') }}</span>
+                  <i class="fas" [class.fa-wine-bottle]="demande.typesDechets === 'plastique'"
+                     [class.fa-glass-martini]="demande.typesDechets === 'verre'"
+                     [class.fa-newspaper]="demande.typesDechets === 'papier'"
+                     [class.fa-cube]="demande.typesDechets === 'metal'"></i>
+                  <span>{{ demande.typesDechets }}</span>
                 </div>
                 <div class="collecte-details">
                   <p><i class="fas fa-weight"></i> {{ demande.poids }}g</p>

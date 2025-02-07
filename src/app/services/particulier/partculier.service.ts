@@ -6,7 +6,7 @@ import {AuthService} from '../auth.service';
 export interface DemandeRequest {
   id?: string;
   userId: string;
-  typesDechets: string[];
+  typesDechets: string;
   photos?: string[];
   poids: number;
   adresse: string;

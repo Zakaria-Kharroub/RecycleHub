@@ -149,59 +149,21 @@
       "address": "el massira\nyoussoufia",
       "phone": "0603471732",
       "birthdate": "2005-06-15"
+    },
+    {
+      "id": "7f5d",
+      "email": "podad@mailinator.com",
+      "password": "podad@mailinator.com",
+      "firstName": "Leigh",
+      "lastName": "Knowles",
+      "address": "Ea quia quis id rei",
+      "phone": "2398237232",
+      "birthdate": "1994-12-21"
     }
   ],
   "demandes": [
-    {
-      "id": "23o8",
-      "type": "plastique",
-      "poid": 20
-    },
-    {
-      "id": "45b9",
-      "type": "papier",
-      "poid": 15
-    },
-    {
-      "id": "67c1",
-      "type": "verre",
-      "poid": 25
-    },
-    {
-      "0": {
-        "id": "23o8",
-        "type": "plastique",
-        "poid": 20
-      },
-      "1": {
-        "id": "45b9",
-        "type": "papier",
-        "poid": 15
-      },
-      "2": {
-        "id": "67c1",
-        "type": "verre",
-        "poid": 25
-      },
-      "id": "bfde"
-    },
-    {
-      "id": "a99f",
-      "typesDechets": [
-        "plastique",
-        "papier",
-        "metal"
-      ],
-      "poids": 1200,
-      "adresse": "Quo tempor cum ab es",
-      "date": "2023-07-24",
-      "creneau": "11:00 - 12:00",
-      "notes": "Voluptatem aut irur",
-      "photos": [],
-      "userId": "",
-      "status": "en_attente",
-      "dateCreation": "2025-02-06T11:11:51.383Z"
-    },
+
+
     {
       "id": "5390",
       "typesDechets": [
@@ -250,6 +212,110 @@
       "userId": "de89",
       "status": "en_attente",
       "dateCreation": "2025-02-06T11:58:54.614Z"
+    },
+    {
+      "id": "d9fb",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 0
+        },
+        {
+          "type": "verre",
+          "poids": 0
+        }
+      ],
+      "adresse": "alza",
+      "date": "1995-07-08",
+      "creneau": "17:00 - 18:00",
+      "notes": "Amet rerum quia bla",
+      "poidsTotal": 0,
+      "photos": [],
+      "userId": "",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T15:18:43.200Z"
+    },
+    {
+      "id": "a0b7",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 0
+        },
+        {
+          "type": "verre",
+          "poids": 0
+        }
+      ],
+      "adresse": "paris",
+      "date": "1988-10-12",
+      "creneau": "15:00 - 16:00",
+      "notes": "Illum est et duis ",
+      "poidsTotal": 0,
+      "photos": [],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T15:20:38.912Z"
+    },
+    {
+      "id": "988a",
+      "typesDechets": [
+        "verre",
+        "papier"
+      ],
+      "poids": 2001,
+      "adresse": "Sint exercitationem ",
+      "date": "2025-10-22",
+      "creneau": "10:00 - 11:00",
+      "notes": "Dolorem earum offici",
+      "photos": [],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T16:24:46.373Z"
+    },
+    {
+      "id": "1277",
+      "typesDechets": [
+        "plastique",
+        "verre",
+        "papier",
+        "metal"
+      ],
+      "poids": 8560,
+      "adresse": "kalocha",
+      "date": "1986-01-12",
+      "creneau": "11:00 - 12:00",
+      "notes": "Voluptates labore et",
+      "photos": [],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T16:25:38.331Z"
+    },
+    {
+      "id": "4dde",
+      "typesDechets": "metal",
+      "poids": 1999,
+      "adresse": "Commodo atque invent",
+      "date": "2009-12-06",
+      "creneau": "09:00 - 10:00",
+      "notes": "Similique ut possimu",
+      "photos": [],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T05:25:40.324Z"
+    },
+    {
+      "id": "4600",
+      "typesDechets": "plastique",
+      "poids": 3600,
+      "adresse": "Aspernatur ullam pos",
+      "date": "2014-10-03",
+      "creneau": "16:00 - 17:00",
+      "notes": "doucha",
+      "photos": [],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T05:27:17.172Z"
     }
   ]
 }
