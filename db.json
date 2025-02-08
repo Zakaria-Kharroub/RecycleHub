@@ -1,101 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@gmail.com"
-    },
-    {
-      "id": "2",
-      "name": "Jane Doe",
-      "email": "jane@gmai.com"
-    },
-    {
-      "id": "7a6a",
-      "name": "ahmed",
-      "age": 20
-    },
-    {
-      "id": "51f2",
-      "email": "tefat@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "Randall",
-      "lastName": "Larsen",
-      "address": "Ad qui soluta placea",
-      "phone": "0603471732",
-      "birthdate": "1976-10-13"
-    },
-    {
-      "id": "f07a",
-      "email": "gefere@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "Martin",
-      "lastName": "Macias",
-      "address": "Omnis quaerat earum ",
-      "phone": "2312398232",
-      "birthdate": "2007-07-15"
-    },
-    {
-      "id": "4fa4",
-      "email": "teked@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "Flavia",
-      "lastName": "Oliver",
-      "address": "Exercitationem tempo",
-      "phone": "2893723232",
-      "birthdate": "1998-01-13"
-    },
-    {
-      "id": "ec1b",
-      "email": "kolihab@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "abdelali",
-      "lastName": "Mckinney",
-      "address": "Qui elit voluptas n",
-      "phone": "2837239823",
-      "birthdate": "2020-10-28"
-    },
-    {
-      "id": "dacd",
-      "email": "xaxanypaw@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "Lila",
-      "lastName": "Hardy",
-      "address": "Qui velit quo enim l",
-      "phone": "3232182912",
-      "birthdate": "2004-05-11"
-    },
-    {
-      "id": "a05d",
-      "email": "fatozep@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "firstName": "Astra",
-      "lastName": "Pitts",
-      "address": "Ut quas consectetur ",
-      "phone": "1230912932",
-      "birthdate": "2021-05-10"
-    },
-    {
-      "id": "280e",
-      "email": "dujidohu@mailinator.com",
-      "password": "dujidohu@mailinator.com",
-      "firstName": "Kaseem",
-      "lastName": "Hensley",
-      "address": "Aperiam ut sit fuga",
-      "phone": "2372393989",
-      "birthdate": "1987-07-27"
-    },
-    {
-      "id": "00ed",
-      "email": "zatyginu@mailinator.com",
-      "password": "$2a$10$58LiEagDvAAXtVrmpQhTreAQZlNsVB/R3yN3l1oXwwwokzEIlLf1a",
-      "firstName": "Yasir",
-      "lastName": "Wise",
-      "address": "At sunt dolores vero",
-      "phone": "3872387232",
-      "birthdate": "2007-05-16"
-    },
-    {
       "id": "c8fa",
       "email": "kuholizij@mailinator.com",
       "password": "$2a$10$pjYPzV.2dPSa6NtCmq5UoeL0AHCpr/RFYHPlAuupAwJZh031M./xW",
@@ -163,55 +68,6 @@
   ],
   "demandes": [
     {
-      "id": "5390",
-      "typesDechets": [
-        "plastique"
-      ],
-      "poids": 1100,
-      "adresse": "In Nam rerum delectu",
-      "date": "2022-06-25",
-      "creneau": "09:00 - 10:00",
-      "notes": "Est nostrud alias do",
-      "photos": [],
-      "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-06T11:14:24.853Z"
-    },
-    {
-      "id": "cf8d",
-      "typesDechets": [
-        "verre",
-        "metal"
-      ],
-      "poids": 1100,
-      "adresse": "Tempora maxime ipsum",
-      "date": "2025-05-27",
-      "creneau": "16:00 - 17:00",
-      "notes": "Mollitia et voluptat",
-      "photos": [],
-      "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-06T11:16:42.997Z"
-    },
-    {
-      "id": "52c0",
-      "typesDechets": [
-        "plastique",
-        "verre",
-        "papier",
-        "metal"
-      ],
-      "poids": 1002,
-      "adresse": "In in totam culpa i",
-      "date": "2022-02-03",
-      "creneau": "15:00 - 16:00",
-      "notes": "Qui similique sint N",
-      "photos": [],
-      "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-06T11:58:54.614Z"
-    },
-    {
       "id": "d9fb",
       "dechets": [
         {
@@ -234,26 +90,120 @@
       "dateCreation": "2025-02-06T15:18:43.200Z"
     },
     {
-      "id": "b925",
-      "adresse": "dakhla",
-      "date": "1991-01-15",
-      "creneau": "16:00 - 17:00",
-      "notes": "Quo non aliqua Dolo",
+      "id": "4f1b",
+      "adresse": "Tempore iure incidi",
+      "date": "2019-03-20",
+      "creneau": "17:00 - 18:00",
+      "notes": "Perspiciatis illum",
       "dechets": [
         {
           "type": "plastique",
-          "poids": 500
+          "poids": 400
+        },
+        {
+          "type": "metal",
+          "poids": 3000
+        }
+      ],
+      "poidsTotal": 3400,
+      "photos": [
+        "blob:http://localhost:4200/1f8797ac-e5ed-4108-a153-b1b485955654"
+      ],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T08:43:21.194Z"
+    },
+    {
+      "id": "9408",
+      "adresse": "casa",
+      "date": "1989-04-14",
+      "creneau": "17:00 - 18:00",
+      "notes": "Voluptas eaque non q",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5435
         },
         {
           "type": "verre",
-          "poids": 2500
+          "poids": 455
         }
       ],
-      "poidsTotal": 3000,
-      "photos": [],
+      "poidsTotal": 5890,
+      "photos": [
+        "blob:http://localhost:4200/ec498c8c-8ff5-4aaf-9df0-7168324396ab"
+      ],
       "userId": "7f5d",
       "status": "en_attente",
-      "dateCreation": "2025-02-07T06:01:15.249Z"
+      "dateCreation": "2025-02-07T08:57:31.624Z"
+    },
+    {
+      "id": "7f09",
+      "adresse": "Quibusdam aut pariat",
+      "date": "1980-02-01",
+      "creneau": "11:00 - 12:00",
+      "notes": "Nisi aut sed dolore ",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 1000
+        },
+        {
+          "type": "verre",
+          "poids": 100
+        }
+      ],
+      "poidsTotal": 1100,
+      "photos": [
+        "blob:http://localhost:4200/99f0d7b2-7aea-4147-9a30-fe9a0301104d"
+      ],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T11:22:23.648Z"
+    },
+    {
+      "id": "d7ec",
+      "adresse": "Incididunt consequat",
+      "date": "2004-07-19",
+      "creneau": "09:00 - 10:00",
+      "notes": "Ut quidem esse quae",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 1000
+        }
+      ],
+      "poidsTotal": 1000,
+      "photos": [
+        "blob:http://localhost:4200/d4259738-a2c2-4e15-8e79-2330ce9b575e"
+      ],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T11:22:37.992Z"
+    },
+    {
+      "id": "3ad3",
+      "adresse": "Enim placeat sint ",
+      "date": "1977-01-12",
+      "creneau": "14:00 - 15:00",
+      "notes": "Laborum Nihil adipi",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5000
+        },
+        {
+          "type": "verre",
+          "poids": 200
+        }
+      ],
+      "poidsTotal": 5200,
+      "photos": [
+        "blob:http://localhost:4200/b0195bfc-a10b-4e32-bc76-e6a3f70312cb"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:23:12.844Z"
     }
   ]
 }

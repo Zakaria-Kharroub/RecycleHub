@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AuthService} from '../auth.service';
+import {map} from 'rxjs/operators';
 
 export interface TypeDechetPoids {
   type: string;
@@ -12,7 +13,7 @@ export interface DemandeRequest {
   id?: string;
   userId: string;
   dechets: TypeDechetPoids[];
-  photos?: string[];
+  photos: string[];
   poidsTotal: number;
   adresse: string;
   date: string;
@@ -49,12 +50,15 @@ export class ParticulierService {
     const userId = this.authService.useId;
     return this.http.get<DemandeRequest[]>(`${this.apiUrl}?userId=${userId}`);
   }
+  getDemandesEnAttente():Observable<number>{
+    const userId= this.authService.useId;
+    return this.http.get<DemandeRequest[]>(`${this.apiUrl}?userId=${userId}&status=en_attente`)
+      .pipe(
+        map(demades =>demades.length)
+      );
+  }
 
   supprimerDemande(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
-
-  modifierDemande(id: string, demande: Partial<DemandeRequest>): Observable<DemandeRequest> {
-    return this.http.patch<DemandeRequest>(`${this.apiUrl}/${id}`, demande);
   }
 }

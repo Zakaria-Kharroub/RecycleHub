@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, FormArray, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../layouts/header/header.component';
 import {DemandeRequest, ParticulierService} from '../../services/particulier/partculier.service';
 
@@ -27,7 +27,7 @@ export class ParticulierComponent implements OnInit {
   isSubmitting = false;
   errorMessage = '';
   selectedFilter: 'all' | 'en_attente' | 'validee' = 'all';
-  selectedFiles: File[] = [];
+  selectedImage: string = '';
   poidsTotal = 0;
 
   typesDechets: TypeDechet[] = [
@@ -51,8 +51,11 @@ export class ParticulierComponent implements OnInit {
     });
   }
 
+  nbDemandeEnAttente:number=0;
+
   ngOnInit() {
     this.loadDemandes();
+    this.loadDemandeEnAttente();
   }
 
   loadDemandes() {
@@ -66,6 +69,17 @@ export class ParticulierComponent implements OnInit {
         console.error('Erreur lors du chargement des demandes:', error);
       }
     });
+  }
+
+  loadDemandeEnAttente(){
+    this.particulierService.getDemandesEnAttente().subscribe({
+      next:(nombre)=>{
+        this.nbDemandeEnAttente= nombre;
+      },
+      error:(error)=>{
+        console.log("error charge demandes en attetnte")
+      }
+    })
   }
 
   toggleTypeDechet(typeId: string) {
@@ -93,13 +107,19 @@ export class ParticulierComponent implements OnInit {
 
   onFileSelect(event: Event) {
     const input = event.target as HTMLInputElement;
-    if (input.files) {
-      this.selectedFiles = Array.from(input.files);
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      // Ici, nous utilisons une URL locale pour le fichier
+      this.selectedImage = URL.createObjectURL(file);
     }
   }
 
   onSubmit() {
     if (this.demandeForm.valid && !this.isSubmitting && Object.keys(this.selectedTypes).length > 0) {
+      if (this.nbDemandeEnAttente>=3){
+        this.errorMessage = 'vous avez 3 demandes en attette';
+        return;
+      }
       this.isSubmitting = true;
       this.errorMessage = '';
 
@@ -112,7 +132,7 @@ export class ParticulierComponent implements OnInit {
         ...this.demandeForm.value,
         dechets,
         poidsTotal: this.poidsTotal,
-        photos: []
+        photos: this.selectedImage ? [this.selectedImage] : []
       };
 
       this.particulierService.creerDemande(demande).subscribe({
@@ -120,9 +140,10 @@ export class ParticulierComponent implements OnInit {
           this.demandeForm.reset();
           this.selectedTypes = {};
           this.poidsTotal = 0;
-          this.selectedFiles = [];
+          this.selectedImage = '';
           this.loadDemandes();
           this.isSubmitting = false;
+          this.loadDemandeEnAttente();
         },
         error: (error) => {
           console.error('Erreur lors de la création de la demande:', error);
@@ -149,12 +170,17 @@ export class ParticulierComponent implements OnInit {
       this.particulierService.supprimerDemande(id).subscribe({
         next: () => {
           this.loadDemandes();
+          this.loadDemandeEnAttente();
         },
         error: (error) => {
           console.error('Erreur lors de la suppression:', error);
         }
       });
     }
+  }
+
+  getDemandeImage(demande: DemandeRequest): string {
+    return demande.photos[0] || 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kSZD8xw0lrfx3HzOweQobCIG1fW3mx.png';
   }
 
   protected readonly Object = Object;

@@ -28,8 +28,16 @@
                 <a class="btn" routerLink="/login">Connexion</a>
               </ng-container>
               <ng-template #userInfo>
-                <span class="nav-link" routerLink="/profile" routerLinkActive="active">{{ authService.userFirstName }}</span>
-                <button class="btn btn-outline-primary" (click)="logout()">Déconnexion</button>
+                <div class="dropdown">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ authService.userFirstName }}
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" routerLink="/profile">Profil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button class="dropdown-item" (click)="logout()">Déconnexion</button></li>
+                  </ul>
+                </div>
               </ng-template>
             </div>
           </div>

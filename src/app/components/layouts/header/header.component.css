@@ -62,6 +62,15 @@
   transform: translateY(-1px);
 }
 
+.dropdown-menu {
+  min-width: 150px;
+  text-align: center;
+}
+
+.dropdown-item {
+  padding: 10px;
+}
+
 @media (max-width: 991px) {
   .navbar-collapse {
     background: #fff;

@@ -2,33 +2,33 @@
 <section class="collecte-section">
   <div class="container-fluid px-4">
     <div class="collecte-container">
-
-      <!-- Form Demande -->
+      <!-- Formulaire de demande -->
       <div class="collecte-form-wrapper">
         <div class="collecte-form-card">
+          <p class="mb-3 badge bg-primary">Demandes en attente: {{ nbDemandeEnAttente }}/3</p>
           <h2>Nouvelle Demande</h2>
-
           <form [formGroup]="demandeForm" (ngSubmit)="onSubmit()">
-
             <div class="mb-4">
-
-
-
-<!--              dechet types-->
               <label class="form-label">Types de déchets et poids</label>
               <div class="waste-type-grid">
                 <div class="waste-type-item" *ngFor="let type of typesDechets">
-                  <input type="checkbox" [id]="type.id" [checked]="isTypeDechetSelected(type.id)" (change)="toggleTypeDechet(type.id)">
+                  <input type="checkbox"
+                         [id]="type.id"
+                         [checked]="isTypeDechetSelected(type.id)"
+                         (change)="toggleTypeDechet(type.id)">
                   <label [for]="type.id">
                     <i class="fas" [class]="type.icon"></i>
                     <span>{{ type.nom }}</span>
                   </label>
                   <div *ngIf="isTypeDechetSelected(type.id)" class="mt-2">
-                    <input type="number" class="form-control form-control-sm" [value]="selectedTypes[type.id]" (input)="updatePoids(type.id, $event)" placeholder="Poids en grammes">
+                    <input type="number"
+                           class="form-control form-control-sm"
+                           [value]="selectedTypes[type.id]"
+                           (input)="updatePoids(type.id, $event)"
+                           placeholder="Poids en grammes">
                   </div>
                 </div>
               </div>
-
               <div *ngIf="Object.keys(selectedTypes).length === 0" class="text-danger mt-2">
                 Sélectionnez au moins un type de déchet
               </div>
@@ -40,18 +40,18 @@
               </div>
             </div>
 
-<!--            photo optionelle-->
             <div class="mb-4">
-              <label class="form-label">Photos des déchets (optionnel)</label>
+              <label class="form-label">Photo des déchets (optionnel)</label>
               <div class="upload-zone" (click)="fileInput.click()">
                 <i class="fas fa-cloud-upload-alt"></i>
-                <p>{{ selectedFiles.length ? selectedFiles.length + ' fichier(s) sélectionné(s)' : 'Glissez vos photos ici ou cliquez pour sélectionner' }}</p>
-                <input #fileInput type="file" multiple accept="image/*" class="d-none" (change)="onFileSelect($event)">
+                <p>{{ selectedImage ? '1 image sélectionnée' : 'Cliquez pour sélectionner une image' }}</p>
+                <input #fileInput type="file" accept="image/*" class="d-none" (change)="onFileSelect($event)">
+              </div>
+              <div *ngIf="selectedImage" class="mt-2">
+                <img [src]="selectedImage" alt="Aperçu" style="max-width: 200px; max-height: 200px;">
               </div>
             </div>
 
-
-<!--            adresse-->
             <div class="mb-4">
               <label class="form-label">Adresse de collecte</label>
               <textarea class="form-control" formControlName="adresse" rows="2" placeholder="Votre adresse complète"></textarea>
@@ -60,7 +60,6 @@
               </div>
             </div>
 
-<!--            date-->
             <div class="form-row">
               <div class="mb-4 flex-grow-1">
                 <label class="form-label">Date souhaitée</label>
@@ -69,8 +68,6 @@
                   La date est requise
                 </div>
               </div>
-
-<!--              crenau horaire-->
               <div class="mb-4 flex-grow-1">
                 <label class="form-label">Créneau horaire</label>
                 <select class="form-control" formControlName="creneau">
@@ -89,7 +86,6 @@
               </div>
             </div>
 
-<!--            notes-->
             <div class="mb-4">
               <label class="form-label">Notes supplémentaires (optionnel)</label>
               <textarea class="form-control" formControlName="notes" rows="2" placeholder="Informations complémentaires pour le collecteur"></textarea>
@@ -119,8 +115,12 @@
         </div>
         <div class="collecte-list">
           <div class="collecte-card" *ngFor="let demande of filteredDemandes">
-            <img [src]="demande.photos?.[0] || 'https://www.paprec.com/wp-content/uploads/2020/10/dechets_menagers_non_recyclable.png'"
-                 [alt]="'Déchets ' + demande.dechets[0]?.type"
+<!--            <img [src]="getDemandeImage(demande)"-->
+<!--                 [alt]="'Déchets ' + getDechetType(demande)"-->
+<!--                 class="collecte-card-image">-->
+
+            <img [src]="getDemandeImage(demande)"
+                 [alt]="'Déchets ' + demande.dechets[0].type"
                  class="collecte-card-image">
             <div class="collecte-content">
               <div class="collecte-status" [class.pending]="demande.status === 'en_attente'" [class.validated]="demande.status === 'validee'">
@@ -152,7 +152,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
