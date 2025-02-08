@@ -38,6 +38,10 @@ export class AuthService {
     return this.currentUserValue?.firstName || '';
   }
 
+  public get useId():string{
+    return this.currentUserValue?.id || '';
+  }
+
   isAuthenticated(): boolean {
     return !!this.currentUserValue;
   }
