@@ -254,8 +254,34 @@
       "poidsTotal": 5000,
       "photos": [],
       "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-09T20:28:42.278Z"
+      "status": "rejetee",
+      "dateCreation": "2025-02-09T20:28:42.278Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:46.035Z"
+    },
+    {
+      "id": "fc50",
+      "adresse": "Qui tempor omnis et ",
+      "date": "2025-01-22",
+      "creneau": "14:00 - 15:00",
+      "notes": "Odio aut ea dolorum ",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2022
+        },
+        {
+          "type": "verre",
+          "poids": 222
+        }
+      ],
+      "poidsTotal": 2244,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T09:29:19.830Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:40.642Z"
     }
   ]
 }
