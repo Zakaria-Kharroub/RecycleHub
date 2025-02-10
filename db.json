@@ -65,6 +65,29 @@
       "address": "Ea quia quis id rei",
       "phone": "2398237232",
       "birthdate": "1994-12-21"
+    },
+    {
+      "id": "f54c",
+      "email": "jamal@gmail.com",
+      "password": "jamal@gmail.com",
+      "firstName": "jamal",
+      "lastName": "hamoudane",
+      "address": "casa",
+      "phone": "2837233944",
+      "birthdate": "2001-01-10",
+      "role": "collecteur",
+      "points": 0
+    },
+    {
+      "id": "0515",
+      "email": "walid@gmail.com",
+      "password": "walid@gmail.com",
+      "firstName": "walid",
+      "lastName": "wardi",
+      "address": "casa",
+      "phone": "0603471732",
+      "birthdate": "2025-01-29",
+      "role": "particulier"
     }
   ],
   "demandes": [

@@ -30,11 +30,12 @@ export class RegisterComponent implements OnInit {
       address: ["", Validators.required],
       phone: ["", [Validators.required, Validators.pattern("^[0-9]{10}$")]],
       birthdate: ["", Validators.required],
+      role:["particulier"]
     });
   }
 
   onSubmit(event: Event) {
-    event.preventDefault(); // Prevent form from submitting normally
+    event.preventDefault();
 
     if (this.registerForm.valid && !this.isSubmitting) {
       this.isSubmitting = true;
