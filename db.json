@@ -49,11 +49,12 @@
       "id": "de89",
       "email": "walid@gmail.com",
       "password": "walid@gmail.com",
-      "firstName": "walid",
+      "firstName": "walidox",
       "lastName": "ahmadi",
       "address": "el massira\nyoussoufia",
       "phone": "0603471732",
-      "birthdate": "2005-06-15"
+      "birthdate": "2005-06-15",
+      "points": 153327080211.36902
     },
     {
       "id": "7f5d",
@@ -282,6 +283,106 @@
       "dateCreation": "2025-02-10T09:29:19.830Z",
       "collecteurId": "de89",
       "dateModification": "2025-02-10T09:29:40.642Z"
+    },
+    {
+      "id": "3bfb",
+      "adresse": "Repudiandae est id ",
+      "date": "1985-10-06",
+      "creneau": "16:00 - 17:00",
+      "notes": "Sint eum sint tenetu",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 500000
+        },
+        {
+          "type": "verre",
+          "poids": 800000
+        },
+        {
+          "type": "papier",
+          "poids": 9000000
+        },
+        {
+          "type": "metal",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 12300000,
+      "photos": [
+        "blob:http://localhost:4200/f2d4f77c-128b-417c-9c58-2045a0d61d26"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:43:21.312Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:08.124Z"
+    },
+    {
+      "id": "70fd",
+      "adresse": "Ut non Nam velit occ",
+      "date": "2015-07-28",
+      "creneau": "09:00 - 10:00",
+      "notes": "Explicabo Rerum ess",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2000000
+        },
+        {
+          "type": "verre",
+          "poids": 7000000000
+        },
+        {
+          "type": "papier",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 7004000000,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:06.424Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:02.404Z"
+    },
+    {
+      "id": "6834",
+      "adresse": "Dolorum enim porro a",
+      "date": "2004-03-03",
+      "creneau": "10:00 - 11:00",
+      "notes": "Laudantium eligendi",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 999999999
+        },
+        {
+          "type": "verre",
+          "poids": 999999999999
+        },
+        {
+          "type": "papier",
+          "poids": 99999999999
+        },
+        {
+          "type": "metal",
+          "poids": 9999999999999
+        }
+      ],
+      "poidsTotal": 11100999999996,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:37.222Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:45:56.772Z"
+    }
+  ],
+  "solde": [
+    {
+      "id": "de89",
+      "solde": 102218053392.81201
     }
   ]
 }
