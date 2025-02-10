@@ -1,0 +1,231 @@
+.collecteur-section {
+  padding: 40px 0;
+  background: #f8f9fa;
+  min-height: calc(100vh - 80px);
+  margin-top: 80px;
+}
+
+.collecteur-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header avec filtres */
+.collecteur-header {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-title {
+  color: #2e7d32;
+  margin: 0;
+  font-size: 24px;
+}
+
+.status-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #4CAF50;
+  background: transparent;
+  color: #4CAF50;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* Grille des demandes */
+.demandes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.demande-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.demande-card:hover {
+  transform: translateY(-5px);
+}
+
+.demande-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.demande-content {
+  padding: 20px;
+}
+
+.demande-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.status-en-attente {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.status-occupee {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-en-cours {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-validee {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-rejetee {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.demande-details {
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.detail-item i {
+  color: #4CAF50;
+  width: 20px;
+}
+
+.dechets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.dechet-tag {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.demande-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.btn-accepter {
+  background: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.btn-accepter:hover {
+  background: #45a049;
+}
+
+.btn-rejeter {
+  background: transparent;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.btn-rejeter:hover {
+  background: #d32f2f;
+  color: white;
+}
+
+.btn-commencer {
+  background: #1976d2;
+  color: white;
+  border: none;
+}
+
+.btn-commencer:hover {
+  background: #1565c0;
+}
+
+.btn-terminer {
+  background: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.btn-terminer:hover {
+  background: #45a049;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header-title {
+    text-align: center;
+  }
+
+  .status-filters {
+    justify-content: center;
+  }
+
+  .demandes-grid {
+    grid-template-columns: 1fr;
+  }
+}

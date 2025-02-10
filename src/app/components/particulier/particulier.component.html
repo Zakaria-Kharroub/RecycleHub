@@ -48,7 +48,7 @@
                 <input #fileInput type="file" accept="image/*" class="d-none" (change)="onFileSelect($event)">
               </div>
               <div *ngIf="selectedImage" class="mt-2">
-                <img [src]="selectedImage" alt="Aperçu" style="max-width: 200px; max-height: 200px;">
+                <img [src]="selectedImage"  alt="Aperçu" style="max-width: 200px; max-height: 200px;">
               </div>
             </div>
 
@@ -111,20 +111,21 @@
             <button class="btn btn-filter" [class.active]="selectedFilter === 'all'" (click)="filterDemandes('all')">Toutes</button>
             <button class="btn btn-filter" [class.active]="selectedFilter === 'en_attente'" (click)="filterDemandes('en_attente')">En attente</button>
             <button class="btn btn-filter" [class.active]="selectedFilter === 'validee'" (click)="filterDemandes('validee')">Validées</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'en_cours'" (click)="filterDemandes('en_cours')">En cours</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'rejetee'" (click)="filterDemandes('rejetee')">Rejetées</button>
           </div>
         </div>
         <div class="collecte-list">
           <div class="collecte-card" *ngFor="let demande of filteredDemandes">
-<!--            <img [src]="getDemandeImage(demande)"-->
-<!--                 [alt]="'Déchets ' + getDechetType(demande)"-->
-<!--                 class="collecte-card-image">-->
-
             <img [src]="getDemandeImage(demande)"
                  [alt]="'Déchets ' + demande.dechets[0].type"
                  class="collecte-card-image">
             <div class="collecte-content">
-              <div class="collecte-status" [class.pending]="demande.status === 'en_attente'" [class.validated]="demande.status === 'validee'">
-                {{ demande.status === 'en_attente' ? 'En attente' : 'Validée' }}
+              <div class="collecte-status"
+                   [class.pending]="demande.status === 'en_attente'"
+                   [class.validated]="demande.status === 'validee'"
+              >
+                {{ getStatusLabel(demande.status) }}
               </div>
               <div class="collecte-info">
                 <div class="waste-type" *ngFor="let dechet of demande.dechets">

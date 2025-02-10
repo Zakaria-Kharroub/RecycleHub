@@ -134,8 +134,10 @@
         "blob:http://localhost:4200/ec498c8c-8ff5-4aaf-9df0-7168324396ab"
       ],
       "userId": "7f5d",
-      "status": "en_attente",
-      "dateCreation": "2025-02-07T08:57:31.624Z"
+      "status": "occupee",
+      "dateCreation": "2025-02-07T08:57:31.624Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T21:48:56.469Z"
     },
     {
       "id": "7f09",
@@ -158,8 +160,10 @@
         "blob:http://localhost:4200/99f0d7b2-7aea-4147-9a30-fe9a0301104d"
       ],
       "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-07T11:22:23.648Z"
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:22:23.648Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:14:53.862Z"
     },
     {
       "id": "d7ec",
@@ -178,8 +182,10 @@
         "blob:http://localhost:4200/d4259738-a2c2-4e15-8e79-2330ce9b575e"
       ],
       "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-07T11:22:37.992Z"
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:22:37.992Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:13:47.395Z"
     },
     {
       "id": "3ad3",
@@ -204,6 +210,52 @@
       "userId": "de89",
       "status": "validee",
       "dateCreation": "2025-02-07T11:23:12.844Z"
+    },
+    {
+      "id": "fce6",
+      "adresse": "Dolores eligendi rep",
+      "date": "2024-11-07",
+      "creneau": "09:00 - 10:00",
+      "notes": "Consequatur id quo",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5000
+        },
+        {
+          "type": "verre",
+          "poids": 200
+        }
+      ],
+      "poidsTotal": 5200,
+      "photos": [],
+      "userId": "de89",
+      "status": "rejetee",
+      "dateCreation": "2025-02-08T16:16:38.308Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:17:02.065Z"
+    },
+    {
+      "id": "4f13",
+      "adresse": "Nulla iusto optio c",
+      "date": "1992-03-24",
+      "creneau": "14:00 - 15:00",
+      "notes": "Sed architecto reici",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 3000
+        },
+        {
+          "type": "metal",
+          "poids": 2000
+        }
+      ],
+      "poidsTotal": 5000,
+      "photos": [],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-09T20:28:42.278Z"
     }
   ]
 }
