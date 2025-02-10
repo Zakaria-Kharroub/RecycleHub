@@ -234,6 +234,28 @@
       "dateCreation": "2025-02-08T16:16:38.308Z",
       "collecteurId": "de89",
       "dateModification": "2025-02-08T16:17:02.065Z"
+    },
+    {
+      "id": "4f13",
+      "adresse": "Nulla iusto optio c",
+      "date": "1992-03-24",
+      "creneau": "14:00 - 15:00",
+      "notes": "Sed architecto reici",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 3000
+        },
+        {
+          "type": "metal",
+          "poids": 2000
+        }
+      ],
+      "poidsTotal": 5000,
+      "photos": [],
+      "userId": "de89",
+      "status": "en_attente",
+      "dateCreation": "2025-02-09T20:28:42.278Z"
     }
   ]
 }

@@ -26,7 +26,7 @@ export class ParticulierComponent implements OnInit {
   demandes: DemandeRequest[] = [];
   isSubmitting = false;
   errorMessage = '';
-  selectedFilter: 'all' | 'en_attente' | 'validee' = 'all';
+selectedFilter: 'all' | 'en_attente' | 'validee' | 'en_cours' | 'rejetee' = 'all';
   selectedImage: string = '';
   poidsTotal = 0;
 
@@ -154,7 +154,7 @@ export class ParticulierComponent implements OnInit {
     }
   }
 
-  filterDemandes(status: 'all' | 'en_attente' | 'validee') {
+  filterDemandes(status: 'all' | 'en_attente' | 'validee' | 'en_cours' | 'rejetee') {
     this.selectedFilter = status;
   }
 
@@ -183,5 +183,16 @@ export class ParticulierComponent implements OnInit {
     return demande.photos[0] || 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kSZD8xw0lrfx3HzOweQobCIG1fW3mx.png';
   }
 
+  getStatusLabel(status: string): string{
+    const statusLabels:{ [key:string]:string }={
+      'en_attente':'En attente',
+      'validee':'validée',
+      'en_cours':'En cours',
+      'rejectee':'Rejectée'
+    }
+    return statusLabels[status] || status;
+  }
+
   protected readonly Object = Object;
+  protected readonly status = status;
 }

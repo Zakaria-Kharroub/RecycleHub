@@ -194,6 +194,18 @@
   background: #e8f5e9;
   color: #2e7d32;
 }
+.collecte-status.rejected {
+  background: #ffcdd2;
+  color: #d32f2f;
+}
+.collecte-status.occupee {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+.collecte-status.in-progress{
+  background-color: #ffffa1;
+  color: yellow;
+}
 
 .collecte-info {
   display: grid;
