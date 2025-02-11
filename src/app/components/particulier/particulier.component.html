@@ -1,0 +1,158 @@
+<app-header></app-header>
+<section class="collecte-section">
+  <div class="container-fluid px-4">
+    <div class="collecte-container">
+      <!-- Formulaire de demande -->
+      <div class="collecte-form-wrapper">
+        <div class="collecte-form-card">
+          <p class="mb-3 badge bg-primary">Demandes en attente: {{ nbDemandeEnAttente }}/3</p>
+          <h2>Nouvelle Demande</h2>
+          <form [formGroup]="demandeForm" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+              <label class="form-label">Types de déchets et poids</label>
+              <div class="waste-type-grid">
+                <div class="waste-type-item" *ngFor="let type of typesDechets">
+                  <input type="checkbox"
+                         [id]="type.id"
+                         [checked]="isTypeDechetSelected(type.id)"
+                         (change)="toggleTypeDechet(type.id)">
+                  <label [for]="type.id">
+                    <i class="fas" [class]="type.icon"></i>
+                    <span>{{ type.nom }}</span>
+                  </label>
+                  <div *ngIf="isTypeDechetSelected(type.id)" class="mt-2">
+                    <input type="number"
+                           class="form-control form-control-sm"
+                           [value]="selectedTypes[type.id]"
+                           (input)="updatePoids(type.id, $event)"
+                           placeholder="Poids en grammes">
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="Object.keys(selectedTypes).length === 0" class="text-danger mt-2">
+                Sélectionnez au moins un type de déchet
+              </div>
+              <div class="mt-3">
+                <p class="fw-bold">Poids total: {{ poidsTotal }}g</p>
+                <div *ngIf="poidsTotal < 1000" class="text-danger">
+                  Le poids total minimum doit être de 1000g
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Photo des déchets (optionnel)</label>
+              <div class="upload-zone" (click)="fileInput.click()">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>{{ selectedImage ? '1 image sélectionnée' : 'Cliquez pour sélectionner une image' }}</p>
+                <input #fileInput type="file" accept="image/*" class="d-none" (change)="onFileSelect($event)">
+              </div>
+              <div *ngIf="selectedImage" class="mt-2">
+                <img [src]="selectedImage"  alt="Aperçu" style="max-width: 200px; max-height: 200px;">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Adresse de collecte</label>
+              <textarea class="form-control" formControlName="adresse" rows="2" placeholder="Votre adresse complète"></textarea>
+              <div *ngIf="demandeForm.get('adresse')?.touched && demandeForm.get('adresse')?.errors?.['required']" class="text-danger">
+                L'adresse est requise
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="mb-4 flex-grow-1">
+                <label class="form-label">Date souhaitée</label>
+                <input type="date" class="form-control" formControlName="date">
+                <div *ngIf="demandeForm.get('date')?.touched && demandeForm.get('date')?.errors?.['required']" class="text-danger">
+                  La date est requise
+                </div>
+              </div>
+              <div class="mb-4 flex-grow-1">
+                <label class="form-label">Créneau horaire</label>
+                <select class="form-control" formControlName="creneau">
+                  <option value="">Sélectionnez un créneau</option>
+                  <option value="09:00 - 10:00">09:00 - 10:00</option>
+                  <option value="10:00 - 11:00">10:00 - 11:00</option>
+                  <option value="11:00 - 12:00">11:00 - 12:00</option>
+                  <option value="14:00 - 15:00">14:00 - 15:00</option>
+                  <option value="15:00 - 16:00">15:00 - 16:00</option>
+                  <option value="16:00 - 17:00">16:00 - 17:00</option>
+                  <option value="17:00 - 18:00">17:00 - 18:00</option>
+                </select>
+                <div *ngIf="demandeForm.get('creneau')?.touched && demandeForm.get('creneau')?.errors?.['required']" class="text-danger">
+                  Le créneau horaire est requis
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Notes supplémentaires (optionnel)</label>
+              <textarea class="form-control" formControlName="notes" rows="2" placeholder="Informations complémentaires pour le collecteur"></textarea>
+            </div>
+
+            <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+              {{ errorMessage }}
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="!demandeForm.valid || isSubmitting || poidsTotal < 1000 || Object.keys(selectedTypes).length === 0">
+              {{ isSubmitting ? 'Envoi en cours...' : 'Soumettre la demande' }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Liste des demandes -->
+      <div class="collecte-list-wrapper">
+        <div class="collecte-list-header">
+          <h3>Mes demandes de collecte</h3>
+          <div class="collecte-filters">
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'all'" (click)="filterDemandes('all')">Toutes</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'en_attente'" (click)="filterDemandes('en_attente')">En attente</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'validee'" (click)="filterDemandes('validee')">Validées</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'en_cours'" (click)="filterDemandes('en_cours')">En cours</button>
+            <button class="btn btn-filter" [class.active]="selectedFilter === 'rejetee'" (click)="filterDemandes('rejetee')">Rejetées</button>
+          </div>
+        </div>
+        <div class="collecte-list">
+          <div class="collecte-card" *ngFor="let demande of filteredDemandes">
+            <img [src]="getDemandeImage(demande)"
+                 [alt]="'Déchets ' + demande.dechets[0].type"
+                 class="collecte-card-image">
+            <div class="collecte-content">
+              <div class="collecte-status"
+                   [class.pending]="demande.status === 'en_attente'"
+                   [class.validated]="demande.status === 'validee'"
+              >
+                {{ getStatusLabel(demande.status) }}
+              </div>
+              <div class="collecte-info">
+                <div class="waste-type" *ngFor="let dechet of demande.dechets">
+                  <i class="fas"
+                     [class.fa-wine-bottle]="dechet.type === 'plastique'"
+                     [class.fa-glass-martini]="dechet.type === 'verre'"
+                     [class.fa-newspaper]="dechet.type === 'papier'"
+                     [class.fa-cube]="dechet.type === 'metal'"></i>
+                  <span>{{ dechet.type }} ({{ dechet.poids }}g)</span>
+                </div>
+                <div class="collecte-details">
+                  <p><i class="fas fa-weight"></i> Total: {{ demande.poidsTotal }}g</p>
+                  <p><i class="fas fa-calendar"></i> {{ demande.date | date:'dd/MM/yyyy' }}</p>
+                  <p><i class="fas fa-clock"></i> {{ demande.creneau }}</p>
+                </div>
+                <div class="collecte-address">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>{{ demande.adresse }}</span>
+                </div>
+              </div>
+              <div class="collecte-actions" *ngIf="demande.status === 'en_attente'">
+                <button class="btn btn-outline-danger btn-sm" (click)="supprimerDemande(demande.id!)">Supprimer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

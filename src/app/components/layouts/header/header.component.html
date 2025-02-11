@@ -1,0 +1,48 @@
+<header class="header navbar-area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" routerLink="/">
+            <span class="logo-text">RecycleHub</span>
+          </a>
+          <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+            <span class="toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/collecte" routerLinkActive="active">Demande de Collecte</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/points" routerLinkActive="active">Mes Points</a>
+              </li>
+            </ul>
+            <div class="button">
+              <ng-container *ngIf="!authService.isAuthenticated(); else userInfo">
+                <a class="btn" routerLink="/login">Connexion</a>
+              </ng-container>
+              <ng-template #userInfo>
+                <div class="dropdown">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ authService.userFirstName }}
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" routerLink="/profile">Profil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><button class="dropdown-item" (click)="logout()">Déconnexion</button></li>
+                  </ul>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,92 @@
+<section class="register-section py-5">
+  <div class="container">
+    <div class="row align-items-stretch">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="register-form-container bg-white p-4 rounded shadow h-100">
+          <h2 class="text-center mb-4">Inscription à RecycleHub</h2>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="votre@email.com">
+              <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']" class="text-danger">
+                L'adresse e-mail est requise
+              </div>
+              <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']" class="text-danger">
+                Veuillez entrer une adresse e-mail valide
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Créez un mot de passe sécurisé">
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']" class="text-danger">
+                Le mot de passe est requis
+              </div>
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']" class="text-danger">
+                Le mot de passe doit contenir au moins 6 caractères
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="firstName" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Votre prénom">
+              <div *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.errors?.['required']" class="text-danger">
+                Le prénom est requis
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Votre nom">
+              <div *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.errors?.['required']" class="text-danger">
+                Le nom est requis
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label">Adresse complète</label>
+              <textarea class="form-control" id="address" formControlName="address" rows="3" placeholder="Votre adresse complète"></textarea>
+              <div *ngIf="registerForm.get('address')?.touched && registerForm.get('address')?.errors?.['required']" class="text-danger">
+                L'adresse est requise
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Numéro de téléphone</label>
+              <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="0612345678">
+              <div *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.errors?.['required']" class="text-danger">
+                Le numéro de téléphone est requis
+              </div>
+              <div *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.errors?.['pattern']" class="text-danger">
+                Le numéro de téléphone doit contenir 10 chiffres
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="birthdate" class="form-label">Date de naissance</label>
+              <input type="date" class="form-control" id="birthdate" formControlName="birthdate">
+              <div *ngIf="registerForm.get('birthdate')?.touched && registerForm.get('birthdate')?.errors?.['required']" class="text-danger">
+                La date de naissance est requise
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100" [disabled]="!registerForm.valid || isSubmitting">
+              {{ isSubmitting ? 'Inscription en cours...' : 'Créer mon compte' }}
+            </button>
+          </form>
+          <p class="mt-3 text-center">Déjà membre? <a routerLink="/login">Connectez-vous</a></p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="register-image-container h-100 rounded shadow overflow-hidden">
+          <img src="https://www.lesnatchfrancais.com/cdn/shop/articles/recyclage.jpg?v=1730802229" alt="Illustration de recyclage" class="img-fluid h-100 w-100 object-fit-cover">
+          <div class="overlay-text p-4 bg-dark bg-opacity-75 text-white">
+            <h3>Rejoignez la communauté RecycleHub</h3>
+            <p>Inscrivez-vous pour commencer à recycler et à gagner des récompenses</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

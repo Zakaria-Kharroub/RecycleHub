@@ -1,0 +1,411 @@
+{
+  "users": [
+    {
+      "id": "c8fa",
+      "email": "kuholizij@mailinator.com",
+      "password": "$2a$10$pjYPzV.2dPSa6NtCmq5UoeL0AHCpr/RFYHPlAuupAwJZh031M./xW",
+      "firstName": "Geraldine",
+      "lastName": "Houston",
+      "address": "Non officiis iusto o",
+      "phone": "6450822162",
+      "birthdate": "1999-11-21"
+    },
+    {
+      "id": "86cb",
+      "email": "wygysenin@mailinator.com",
+      "password": "$2a$10$bFaCJNhw5cNljDvwtCdege4SXXKqb23SBkUvVU95pQ7ZdcmvYIovC",
+      "firstName": "Ishmael",
+      "lastName": "Bradley",
+      "address": "Consequatur Dolore ",
+      "phone": "2493484949",
+      "birthdate": "2010-04-19"
+    },
+    {
+      "id": "ad0a",
+      "email": "vykaf@mailinator.com",
+      "password": "vykaf@mailinator.com",
+      "firstName": "Nayda",
+      "lastName": "Bender",
+      "address": "Quaerat a corrupti ",
+      "phone": "2387298738",
+      "birthdate": "2011-03-10"
+    },
+    {
+      "id": "12a2",
+      "email": "xikob@mailinator.com",
+      "password": "xikob@mailinator.com",
+      "firstName": "Mira",
+      "lastName": "Morin",
+      "address": "Sunt dolore beatae i",
+      "phone": "8273982734",
+      "birthdate": "1975-07-13"
+    },
+    {
+      "id": "3173",
+      "name": "ahmed",
+      "age": 20
+    },
+    {
+      "id": "de89",
+      "email": "walid@gmail.com",
+      "password": "walid@gmail.com",
+      "firstName": "walidox",
+      "lastName": "ahmadi",
+      "address": "el massira\nyoussoufia",
+      "phone": "0603471732",
+      "birthdate": "2005-06-15",
+      "points": 459981238022.71106
+    },
+    {
+      "id": "7f5d",
+      "email": "podad@mailinator.com",
+      "password": "podad@mailinator.com",
+      "firstName": "Leigh",
+      "lastName": "Knowles",
+      "address": "Ea quia quis id rei",
+      "phone": "2398237232",
+      "birthdate": "1994-12-21"
+    },
+    {
+      "id": "f54c",
+      "email": "jamal@gmail.com",
+      "password": "jamal@gmail.com",
+      "firstName": "jamal",
+      "lastName": "hamoudane",
+      "address": "casa",
+      "phone": "2837233944",
+      "birthdate": "2001-01-10",
+      "role": "collecteur",
+      "points": 0
+    },
+    {
+      "id": "0515",
+      "email": "walid@gmail.com",
+      "password": "walid@gmail.com",
+      "firstName": "walid",
+      "lastName": "wardi",
+      "address": "casa",
+      "phone": "0603471732",
+      "birthdate": "2025-01-29",
+      "role": "particulier"
+    }
+  ],
+  "demandes": [
+    {
+      "id": "d9fb",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 0
+        },
+        {
+          "type": "verre",
+          "poids": 0
+        }
+      ],
+      "adresse": "alza",
+      "date": "1995-07-08",
+      "creneau": "17:00 - 18:00",
+      "notes": "Amet rerum quia bla",
+      "poidsTotal": 0,
+      "photos": [],
+      "userId": "",
+      "status": "en_attente",
+      "dateCreation": "2025-02-06T15:18:43.200Z"
+    },
+    {
+      "id": "4f1b",
+      "adresse": "Tempore iure incidi",
+      "date": "2019-03-20",
+      "creneau": "17:00 - 18:00",
+      "notes": "Perspiciatis illum",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 400
+        },
+        {
+          "type": "metal",
+          "poids": 3000
+        }
+      ],
+      "poidsTotal": 3400,
+      "photos": [
+        "blob:http://localhost:4200/1f8797ac-e5ed-4108-a153-b1b485955654"
+      ],
+      "userId": "7f5d",
+      "status": "en_attente",
+      "dateCreation": "2025-02-07T08:43:21.194Z"
+    },
+    {
+      "id": "9408",
+      "adresse": "casa",
+      "date": "1989-04-14",
+      "creneau": "17:00 - 18:00",
+      "notes": "Voluptas eaque non q",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5435
+        },
+        {
+          "type": "verre",
+          "poids": 455
+        }
+      ],
+      "poidsTotal": 5890,
+      "photos": [
+        "blob:http://localhost:4200/ec498c8c-8ff5-4aaf-9df0-7168324396ab"
+      ],
+      "userId": "7f5d",
+      "status": "occupee",
+      "dateCreation": "2025-02-07T08:57:31.624Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T21:48:56.469Z"
+    },
+    {
+      "id": "7f09",
+      "adresse": "Quibusdam aut pariat",
+      "date": "1980-02-01",
+      "creneau": "11:00 - 12:00",
+      "notes": "Nisi aut sed dolore ",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 1000
+        },
+        {
+          "type": "verre",
+          "poids": 100
+        }
+      ],
+      "poidsTotal": 1100,
+      "photos": [
+        "blob:http://localhost:4200/99f0d7b2-7aea-4147-9a30-fe9a0301104d"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:22:23.648Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:14:53.862Z"
+    },
+    {
+      "id": "d7ec",
+      "adresse": "Incididunt consequat",
+      "date": "2004-07-19",
+      "creneau": "09:00 - 10:00",
+      "notes": "Ut quidem esse quae",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 1000
+        }
+      ],
+      "poidsTotal": 1000,
+      "photos": [
+        "blob:http://localhost:4200/d4259738-a2c2-4e15-8e79-2330ce9b575e"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:22:37.992Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:13:47.395Z"
+    },
+    {
+      "id": "3ad3",
+      "adresse": "Enim placeat sint ",
+      "date": "1977-01-12",
+      "creneau": "14:00 - 15:00",
+      "notes": "Laborum Nihil adipi",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5000
+        },
+        {
+          "type": "verre",
+          "poids": 200
+        }
+      ],
+      "poidsTotal": 5200,
+      "photos": [
+        "blob:http://localhost:4200/b0195bfc-a10b-4e32-bc76-e6a3f70312cb"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-07T11:23:12.844Z"
+    },
+    {
+      "id": "fce6",
+      "adresse": "Dolores eligendi rep",
+      "date": "2024-11-07",
+      "creneau": "09:00 - 10:00",
+      "notes": "Consequatur id quo",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 5000
+        },
+        {
+          "type": "verre",
+          "poids": 200
+        }
+      ],
+      "poidsTotal": 5200,
+      "photos": [],
+      "userId": "de89",
+      "status": "rejetee",
+      "dateCreation": "2025-02-08T16:16:38.308Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-08T16:17:02.065Z"
+    },
+    {
+      "id": "4f13",
+      "adresse": "Nulla iusto optio c",
+      "date": "1992-03-24",
+      "creneau": "14:00 - 15:00",
+      "notes": "Sed architecto reici",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 3000
+        },
+        {
+          "type": "metal",
+          "poids": 2000
+        }
+      ],
+      "poidsTotal": 5000,
+      "photos": [],
+      "userId": "de89",
+      "status": "rejetee",
+      "dateCreation": "2025-02-09T20:28:42.278Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:46.035Z"
+    },
+    {
+      "id": "fc50",
+      "adresse": "Qui tempor omnis et ",
+      "date": "2025-01-22",
+      "creneau": "14:00 - 15:00",
+      "notes": "Odio aut ea dolorum ",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2022
+        },
+        {
+          "type": "verre",
+          "poids": 222
+        }
+      ],
+      "poidsTotal": 2244,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T09:29:19.830Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:40.642Z"
+    },
+    {
+      "id": "3bfb",
+      "adresse": "Repudiandae est id ",
+      "date": "1985-10-06",
+      "creneau": "16:00 - 17:00",
+      "notes": "Sint eum sint tenetu",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 500000
+        },
+        {
+          "type": "verre",
+          "poids": 800000
+        },
+        {
+          "type": "papier",
+          "poids": 9000000
+        },
+        {
+          "type": "metal",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 12300000,
+      "photos": [
+        "blob:http://localhost:4200/f2d4f77c-128b-417c-9c58-2045a0d61d26"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:43:21.312Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:08.124Z"
+    },
+    {
+      "id": "70fd",
+      "adresse": "Ut non Nam velit occ",
+      "date": "2015-07-28",
+      "creneau": "09:00 - 10:00",
+      "notes": "Explicabo Rerum ess",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2000000
+        },
+        {
+          "type": "verre",
+          "poids": 7000000000
+        },
+        {
+          "type": "papier",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 7004000000,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:06.424Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:02.404Z"
+    },
+    {
+      "id": "6834",
+      "adresse": "Dolorum enim porro a",
+      "date": "2004-03-03",
+      "creneau": "10:00 - 11:00",
+      "notes": "Laudantium eligendi",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 999999999
+        },
+        {
+          "type": "verre",
+          "poids": 999999999999
+        },
+        {
+          "type": "papier",
+          "poids": 99999999999
+        },
+        {
+          "type": "metal",
+          "poids": 9999999999999
+        }
+      ],
+      "poidsTotal": 11100999999996,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:37.222Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:45:56.772Z"
+    }
+  ],
+  "solde": [
+    {
+      "id": "de89",
+      "solde": 102218053392.81201
+    }
+  ]
+}

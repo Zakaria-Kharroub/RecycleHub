@@ -1,0 +1,65 @@
+<app-header></app-header>
+<section class="login-section py-5">
+  <div class="container">
+    <div class="row align-items-stretch">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="login-form-container bg-white p-4 rounded shadow h-100">
+          <h2 class="text-center mb-4">Connexion à RecycleHub</h2>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">Adresse e-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="votre@email.com"
+                [class.is-invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+              >
+              <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']" class="invalid-feedback">
+                L'adresse e-mail est requise
+              </div>
+              <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']" class="invalid-feedback">
+                Veuillez entrer une adresse e-mail valide
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                placeholder="Votre mot de passe"
+                [class.is-invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+              >
+              <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']" class="invalid-feedback">
+                Le mot de passe est requis
+              </div>
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+              {{ errorMessage }}
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="!loginForm.valid || isSubmitting"
+            >
+              {{ isSubmitting ? 'Connexion en cours...' : 'Se connecter' }}
+            </button>
+          </form>
+          <p class="mt-3 text-center">Pas encore membre? <a routerLink="/register">Inscrivez-vous</a></p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login-image-container h-100 rounded shadow overflow-hidden">
+          <img src="https://www.lesnatchfrancais.com/cdn/shop/articles/recyclage.jpg?v=1730802229" alt="Illustration de recyclage" class="img-fluid h-100 w-100 object-fit-cover">
+          <div class="overlay-text p-4 bg-dark bg-opacity-75 text-white">
+            <h3>Bienvenue sur RecycleHub!</h3>
+            <p>Connectez-vous pour commencer à recycler et à gagner des points</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

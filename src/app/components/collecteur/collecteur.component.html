@@ -1,0 +1,97 @@
+<app-header></app-header>
+<section class="collecteur-section">
+  <div class="collecteur-container">
+    <!-- En-tête avec filtres -->
+    <div class="collecteur-header">
+      <div class="header-content">
+        <h2 class="header-title">Demandes de collecte disponibles</h2>
+        <div class="status-filters">
+          <button class="filter-btn" [class.active]="selectedFilter === 'all'" (click)="filterDemandes('all')">
+            Toutes
+          </button>
+          <button class="filter-btn" [class.active]="selectedFilter === 'en_attente'" (click)="filterDemandes('en_attente')">
+            En attente
+          </button>
+          <button class="filter-btn" [class.active]="selectedFilter === 'occupee'" (click)="filterDemandes('occupee')">
+            Occupées
+          </button>
+          <button class="filter-btn" [class.active]="selectedFilter === 'en_cours'" (click)="filterDemandes('en_cours')">
+            En cours
+          </button>
+          <button class="filter-btn" [class.active]="selectedFilter === 'validee'" (click)="filterDemandes('validee')">
+            Validées
+          </button>
+          <button class="filter-btn" [class.active]="selectedFilter === 'rejetee'" (click)="filterDemandes('rejetee')">
+            Rejetées
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille des demandes -->
+    <div class="demandes-grid">
+      <div class="demande-card" *ngFor="let demande of filteredDemandes">
+        <img [src]="getDemandeImage(demande)" [alt]="'Déchets'" class="demande-image">
+
+        <div class="demande-content">
+          <span class="demande-status" [ngClass]="'status-' + demande.status">
+            {{ getStatusLabel(demande.status) }}
+          </span>
+
+          <div class="demande-details">
+            <div class="dechets-list">
+              <span class="dechet-tag" *ngFor="let dechet of demande.dechets">
+                <i class="fas" [ngClass]="getDechetIcon(dechet.type)"></i>
+                {{ dechet.type }} ({{ dechet.poids }}g)
+              </span>
+            </div>
+
+            <div class="detail-item">
+              <i class="fas fa-weight"></i>
+              <span>Total: {{ demande.poidsTotal }}g</span>
+            </div>
+
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>{{ demande.adresse }}</span>
+            </div>
+
+            <div class="detail-item">
+              <i class="fas fa-calendar"></i>
+              <span>{{ demande.date | date:'dd/MM/yyyy' }}</span>
+            </div>
+
+            <div class="detail-item">
+              <i class="fas fa-clock"></i>
+              <span>{{ demande.creneau }}</span>
+            </div>
+          </div>
+
+          <!-- Actions selon le statut -->
+          <div class="demande-actions" [ngSwitch]="demande.status">
+            <ng-container *ngSwitchCase="'en_attente'">
+              <button class="btn-action btn-accepter" (click)="accepterDemande(demande.id)">
+                Accepter
+              </button>
+              <button class="btn-action btn-rejeter" (click)="rejeterDemande(demande.id)">
+                Rejeter
+              </button>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'occupee'">
+              <button class="btn-action btn-commencer" (click)="commencerCollecte(demande.id)">
+                Commencer
+              </button>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'en_cours'">
+              <button class="btn-action btn-terminer" (click)="terminerCollecte(demande.id)">
+                Terminer
+              </button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

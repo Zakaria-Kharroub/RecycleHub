@@ -85,12 +85,24 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/tiny-slider/dist/tiny-slider.css",
+              "node_modules/glightbox/dist/css/glightbox.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/wow.js/dist/wow.min.js",
+              "node_modules/tiny-slider/dist/min/tiny-slider.js",
+              "node_modules/glightbox/dist/js/glightbox.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,0 +1,63 @@
+.register-section {
+  background-color: #e8f5e9;
+  min-height: calc(100vh - 60px);
+}
+
+.register-form-container {
+  height: 100%;
+}
+
+.register-image-container {
+  position: relative;
+}
+
+.register-image-container img {
+  transition: transform 0.3s ease;
+}
+
+.register-image-container:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.register-image-container:hover .overlay-text {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+a {
+  color: #4CAF50;
+}
+
+a:hover {
+  color: #45a049;
+}
+
+@media (max-width: 991px) {
+  .register-image-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .register-image-container {
+    height: 300px;
+  }
+}

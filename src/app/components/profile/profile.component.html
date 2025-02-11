@@ -1,0 +1,66 @@
+<app-header></app-header>
+<section class="profile-section">
+  <div class="container">
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <h2>{{ userProfile?.firstName }} {{ userProfile?.lastName }}</h2>
+          <p class="text-muted">Particulier</p>
+        </div>
+        <div class="profile-stats">
+          <div class="stat-item">
+            <h4>{{ userProfile?.points || 0 }}</h4>
+            <p>Points gagnés</p>
+          </div>
+        </div>
+        <div class="points-conversion">
+          <h3>Convertir vos points</h3>
+          <button class="btn btn-convert" (click)="convertPoints(100)" [disabled]="userProfile?.points < 100">
+            100 points <span class="arrow">→</span> 50 Dh
+          </button>
+          <button class="btn btn-convert" (click)="convertPoints(200)" [disabled]="userProfile?.points < 200">
+            200 points <span class="arrow">→</span> 120 Dh
+          </button>
+          <button class="btn btn-convert" (click)="convertPoints(500)" [disabled]="userProfile?.points < 500">
+            500 points <span class="arrow">→</span> 350 Dh
+          </button>
+        </div>
+      </div>
+      <div class="profile-details">
+        <h3>Informations personnelles</h3>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+          <div class="details-grid">
+            <div class="detail-item">
+              <label for="firstName">Prénom</label>
+              <input type="text" id="firstName" formControlName="firstName" [readonly]="!isEditing">
+            </div>
+            <div class="detail-item">
+              <label for="lastName">Nom</label>
+              <input type="text" id="lastName" formControlName="lastName" [readonly]="!isEditing">
+            </div>
+            <div class="detail-item">
+              <label for="email">Email</label>
+              <input type="email" id="email" formControlName="email" [readonly]="!isEditing">
+            </div>
+            <div class="detail-item">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" formControlName="phone" [readonly]="!isEditing">
+            </div>
+            <div class="detail-item full-width">
+              <label for="address">Adresse</label>
+              <textarea id="address" formControlName="address" [readonly]="!isEditing"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button *ngIf="!isEditing" type="button" class="btn btn-edit" (click)="toggleEdit()">Modifier le profil</button>
+            <button *ngIf="isEditing" type="submit" class="btn btn-save" [disabled]="!profileForm.valid">Enregistrer</button>
+            <button *ngIf="isEditing" type="button" class="btn btn-cancel" (click)="toggleEdit()">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
