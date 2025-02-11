@@ -10,6 +10,8 @@ interface User {
   password: string;
   firstName: string;
   lastName: string;
+  address: string;
+  role: string;
 }
 
 @Injectable({
@@ -42,6 +44,10 @@ export class AuthService {
     return this.currentUserValue?.id || '';
   }
 
+  public get userRole():string{
+    return this.currentUserValue?.role || '';
+  }
+
   isAuthenticated(): boolean {
     return !!this.currentUserValue;
   }
@@ -62,7 +68,9 @@ export class AuthService {
           id: user.id,
           email: user.email,
           firstName: user.firstName,
-          lastName: user.lastName
+          lastName: user.lastName,
+          address: user.address,
+          role:user.role
         };
 
         localStorage.setItem("currentUser", JSON.stringify(userToStore));
@@ -84,6 +92,8 @@ export class AuthService {
           email: response.email,
           firstName: response.firstName,
           lastName: response.lastName,
+          address: response.address,
+          role:response.role
         };
         localStorage.setItem("currentUser", JSON.stringify(userToStore));
         this.currentUserSubject.next(userToStore);

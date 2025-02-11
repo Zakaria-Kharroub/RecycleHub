@@ -49,11 +49,12 @@
       "id": "de89",
       "email": "walid@gmail.com",
       "password": "walid@gmail.com",
-      "firstName": "walid",
+      "firstName": "walidox",
       "lastName": "ahmadi",
       "address": "el massira\nyoussoufia",
       "phone": "0603471732",
-      "birthdate": "2005-06-15"
+      "birthdate": "2005-06-15",
+      "points": 459981238022.71106
     },
     {
       "id": "7f5d",
@@ -64,6 +65,29 @@
       "address": "Ea quia quis id rei",
       "phone": "2398237232",
       "birthdate": "1994-12-21"
+    },
+    {
+      "id": "f54c",
+      "email": "jamal@gmail.com",
+      "password": "jamal@gmail.com",
+      "firstName": "jamal",
+      "lastName": "hamoudane",
+      "address": "casa",
+      "phone": "2837233944",
+      "birthdate": "2001-01-10",
+      "role": "collecteur",
+      "points": 0
+    },
+    {
+      "id": "0515",
+      "email": "walid@gmail.com",
+      "password": "walid@gmail.com",
+      "firstName": "walid",
+      "lastName": "wardi",
+      "address": "casa",
+      "phone": "0603471732",
+      "birthdate": "2025-01-29",
+      "role": "particulier"
     }
   ],
   "demandes": [
@@ -254,8 +278,134 @@
       "poidsTotal": 5000,
       "photos": [],
       "userId": "de89",
-      "status": "en_attente",
-      "dateCreation": "2025-02-09T20:28:42.278Z"
+      "status": "rejetee",
+      "dateCreation": "2025-02-09T20:28:42.278Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:46.035Z"
+    },
+    {
+      "id": "fc50",
+      "adresse": "Qui tempor omnis et ",
+      "date": "2025-01-22",
+      "creneau": "14:00 - 15:00",
+      "notes": "Odio aut ea dolorum ",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2022
+        },
+        {
+          "type": "verre",
+          "poids": 222
+        }
+      ],
+      "poidsTotal": 2244,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T09:29:19.830Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T09:29:40.642Z"
+    },
+    {
+      "id": "3bfb",
+      "adresse": "Repudiandae est id ",
+      "date": "1985-10-06",
+      "creneau": "16:00 - 17:00",
+      "notes": "Sint eum sint tenetu",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 500000
+        },
+        {
+          "type": "verre",
+          "poids": 800000
+        },
+        {
+          "type": "papier",
+          "poids": 9000000
+        },
+        {
+          "type": "metal",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 12300000,
+      "photos": [
+        "blob:http://localhost:4200/f2d4f77c-128b-417c-9c58-2045a0d61d26"
+      ],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:43:21.312Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:08.124Z"
+    },
+    {
+      "id": "70fd",
+      "adresse": "Ut non Nam velit occ",
+      "date": "2015-07-28",
+      "creneau": "09:00 - 10:00",
+      "notes": "Explicabo Rerum ess",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 2000000
+        },
+        {
+          "type": "verre",
+          "poids": 7000000000
+        },
+        {
+          "type": "papier",
+          "poids": 2000000
+        }
+      ],
+      "poidsTotal": 7004000000,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:06.424Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:46:02.404Z"
+    },
+    {
+      "id": "6834",
+      "adresse": "Dolorum enim porro a",
+      "date": "2004-03-03",
+      "creneau": "10:00 - 11:00",
+      "notes": "Laudantium eligendi",
+      "dechets": [
+        {
+          "type": "plastique",
+          "poids": 999999999
+        },
+        {
+          "type": "verre",
+          "poids": 999999999999
+        },
+        {
+          "type": "papier",
+          "poids": 99999999999
+        },
+        {
+          "type": "metal",
+          "poids": 9999999999999
+        }
+      ],
+      "poidsTotal": 11100999999996,
+      "photos": [],
+      "userId": "de89",
+      "status": "validee",
+      "dateCreation": "2025-02-10T14:44:37.222Z",
+      "collecteurId": "de89",
+      "dateModification": "2025-02-10T14:45:56.772Z"
+    }
+  ],
+  "solde": [
+    {
+      "id": "de89",
+      "solde": 102218053392.81201
     }
   ]
 }
